@@ -1,0 +1,10 @@
+#! /bin/sh
+#
+# Created by configure
+
+"./configure" \
+"--prefix=/home/ubuntu-gnome/apache" \
+"--exec-prefix=/home/ubuntu-gnome/apache" \
+"--enable-mods-shared=all" \
+"--enable-so" \
+"$@"

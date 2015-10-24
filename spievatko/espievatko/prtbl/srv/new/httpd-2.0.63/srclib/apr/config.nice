@@ -1,0 +1,17 @@
+#! /bin/sh
+#
+# Created by configure
+
+"/media/ubuntu-gnome/OWAC/spievatko/espievatko/prtbl/srv/new/httpd-2.0.63/srclib/apr/configure" \
+"--enable-mods-shared=all" \
+"--enable-so" \
+"--cache-file=/dev/null" \
+"--srcdir=/media/ubuntu-gnome/OWAC/spievatko/espievatko/prtbl/srv/new/httpd-2.0.63/srclib/apr" \
+"--prefix=/home/ubuntu-gnome/apache" \
+"--exec-prefix=/home/ubuntu-gnome/apache" \
+"--libdir=/home/ubuntu-gnome/apache/lib" \
+"--includedir=/home/ubuntu-gnome/apache/include" \
+"--bindir=/home/ubuntu-gnome/apache/bin" \
+"--datadir=/home/ubuntu-gnome/apache" \
+"--with-installbuilddir=/home/ubuntu-gnome/apache/build" \
+"$@"

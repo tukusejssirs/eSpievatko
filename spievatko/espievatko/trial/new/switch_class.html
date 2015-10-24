@@ -1,0 +1,341 @@
+<!doctype html>
+<!--[if IE 7 ]>		 <html class="no-js ie ie7 lte7 lte8 lte9" lang="en-US"> <![endif]-->
+<!--[if IE 8 ]>		 <html class="no-js ie ie8 lte8 lte9" lang="en-US"> <![endif]-->
+<!--[if IE 9 ]>		 <html class="no-js ie ie9 lte9>" lang="en-US"> <![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--> <html class="no-js" lang="en-US"> <!--<![endif]-->
+<head data-live-domain="jqueryui.com">
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+
+	<title>Switch Class | jQuery UI</title>
+
+	<meta name="author" content="jQuery Foundation - jquery.org">
+	<meta name="description" content="jQuery: The Write Less, Do More, JavaScript Library">
+
+	<meta name="viewport" content="width=device-width">
+
+	<link rel="shortcut icon" href="http://jqueryui.com/jquery-wp-content/themes/jqueryui.com/i/favicon.ico">
+
+	<link rel="stylesheet" href="switch_class/base.css">
+	<link rel="stylesheet" href="switch_class/style.css">
+<!--	<link rel="pingback" href="http://jqueryui.com/xmlrpc.php" /> -->
+	<!--[if lt IE 7]><link rel="stylesheet" href="css/font-awesome-ie7.min.css"><![endif]-->
+
+	<script src="switch_class/modernizr.custom.2.6.2.min.js"></script>
+
+	<script src="switch_class/jquery.min.js"></script>
+	<script>window.jQuery || document.write(unescape('%3Cscript src="http://jqueryui.com/jquery-wp-content/themes/jquery/js/jquery-1.9.1.min.js"%3E%3C/script%3E'))</script>
+
+	<script src="switch_class/plugins.js"></script>
+	<script src="switch_class/main.js"></script>
+
+	<script src="//use.typekit.net/wde1aof.js"></script>
+	<script>try{Typekit.load();}catch(e){}</script>
+
+<script type='text/javascript' src='http://jqueryui.com/wp-includes/js/comment-reply.min.js?ver=3.8'></script>
+<meta name="generator" content="WordPress 3.8" />
+
+</head>
+<body class="jquery-ui page page-id-57 page-template-default page-slug-switchclass single-author singular">
+
+<!--[if lt IE 7]>
+<p class="chromeframe">You are using an outdated browser. <a href="http://browsehappy.com/">Upgrade your browser today</a> or <a href="http://www.google.com/chromeframe/?redirect=true">install Google Chrome Frame</a> to better experience this site.</p>
+<![endif]-->
+
+<header>
+	<section id="global-nav">
+		<nav>
+			<div class="constrain">
+				<ul class="projects">
+					<li class="project jquery"><a href="http://jquery.com/" title="jQuery">jQuery</a></li>
+					<li class="project jquery-ui"><a href="http://jqueryui.com/" title="jQuery UI">jQuery UI</a></li>
+					<li class="project jquery-mobile"><a href="http://jquerymobile.com/" title="jQuery Mobile">jQuery Mobile</a></li>
+					<li class="project sizzlejs"><a href="http://sizzlejs.com/" title="Sizzle">Sizzle</a></li>
+					<li class="project qunitjs"><a href="http://qunitjs.com/" title="QUnit">QUnit</a></li>
+				</ul>
+				<ul class="links">
+					<li><a href="http://plugins.jquery.com/">Plugins</a></li>
+					<li class="dropdown"><a href="http://contribute.jquery.org/">Contribute</a>
+						<ul>
+							<li><a href="http://contribute.jquery.org/cla/">CLA</a></li>
+							<li><a href="http://contribute.jquery.org/style-guide/">Style Guides</a></li>
+							<li><a href="http://contribute.jquery.org/triage/">Bug Triage</a></li>
+							<li><a href="http://contribute.jquery.org/code/">Code</a></li>
+							<li><a href="http://contribute.jquery.org/documentation/">Documentation</a></li>
+							<li><a href="http://contribute.jquery.org/web-sites/">Web Sites</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"><a href="http://events.jquery.org/">Events</a>
+						<ul class="wide">
+							<li><a href="http://appendto.com/what-we-do/training/schedule/jquery-virtual-training-april-2014/">Apr 16-17 | jQuery Virtual Training</a></li>
+							<li><a href="http://jqueryuk.com/?utm_source=jqueryorg&utm_medium=banner&utm_campaign=jqueryorgbanner">May 16 | jQuery UK</a></li>
+							<li><a href="http://appendto.com/what-we-do/training/schedule/jquery-virtual-training-june-2014/">Jun 17-19 | jQuery Virtual Training</a></li>
+							<li><a href="http://events.jquery.org/2014/chicago/">Sep 12-13 | jQuery Chicago</a></li>
+							<li><a href="http://2014.cssdevconf.com/">Oct 13-15 | CSS Dev Conf 2014</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"><a href="https://jquery.org/support/">Support</a>
+						<ul>
+							<li><a href="http://learn.jquery.com/">Learning Center</a></li>
+							<li><a href="http://try.jquery.com/">Try jQuery</a></li>
+							<li><a href="http://irc.jquery.org/">IRC/Chat</a></li>
+							<li><a href="http://forum.jquery.com/">Forums</a></li>
+							<li><a href="http://stackoverflow.com/tags/jquery/info">Stack Overflow</a></li>
+							<li><a href="https://jquery.org/support/">Commercial Support</a></li>
+						</ul>
+					</li>
+					<li class="dropdown"><a href="https://jquery.org/">jQuery Foundation</a>
+						<ul>
+							<li><a href="https://jquery.org/join/">Join</a></li>
+							<li><a href="https://jquery.org/members/">Members</a></li>
+							<li><a href="https://jquery.org/team/">Team</a></li>
+							<li><a href="http://brand.jquery.org/">Brand Guide</a></li>
+							<li><a href="https://jquery.org/donate/">Donate</a></li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</nav>
+	</section>
+</header>
+
+<div id="container">
+	<div id="logo-events" class="constrain clearfix">
+		<h2 class="logo"><a href="/" title="jQuery UI">jQuery UI</a></h2>
+
+		<aside><div id="broadcast"></div></aside>
+	</div>
+
+	<nav id="main" class="constrain clearfix">
+		<div class="menu-top-container">
+	<ul id="menu-top" class="menu">
+<li class="menu-item"><a href="http://jqueryui.com/demos/">Demos</a></li>
+<li class="menu-item"><a href="http://jqueryui.com/download">Download</a></li>
+<li class="menu-item"><a href="http://api.jqueryui.com/">API Documentation</a></li>
+<li class="menu-item"><a href="http://jqueryui.com/themeroller">Themes</a></li>
+<li class="menu-item"><a href="http://jqueryui.com/development">Development</a></li>
+<li class="menu-item"><a href="http://jqueryui.com/support">Support</a></li>
+<li class="menu-item"><a href="http://blog.jqueryui.com/">Blog</a></li>
+<li class="menu-item"><a href="http://jqueryui.com/about">About</a></li>
+	</ul>
+</div>
+
+		<form method="get" class="searchform" action="http://jqueryui.com/">
+	<button type="submit" class="icon-search"><span class="visuallyhidden">search</span></button>
+	<label>
+		<span class="visuallyhidden">Search jQuery UI</span>
+		<input type="text" name="s" value=""
+			placeholder="Search">
+	</label>
+</form>
+	</nav>
+
+	<div id="content-wrapper" class="clearfix row">
+
+
+<div class="content-right twelve columns">
+	<div id="content">
+				<h1 class="entry-title">Switch Class</h1>
+		<hr>
+		
+		
+<p class="desc">Add and remove class(es) to elements while animating all style changes.</p>
+
+<div class="demo-list"><h2>Examples</h2><ul><li class="active"><a href="switch_class																																						 /default.html">switchClass Demo</a></li></ul></div><iframe src="switch_class/default.html" class="demo-frame"></iframe><div class="demo-description">
+<p>Click the button above to preview the effect.</p>
+</div><div class="view-source"><a tabindex="0"><i class="icon-eye-open"></i> view source</a><div><div class="syntaxhighlighter xml ">
+	<table>
+		<tbody>
+			<tr>
+				<td class="gutter">
+					
+						<div class="line n1">1</div>
+					
+						<div class="line n2">2</div>
+					
+						<div class="line n3">3</div>
+					
+						<div class="line n4">4</div>
+					
+						<div class="line n5">5</div>
+					
+						<div class="line n6">6</div>
+					
+						<div class="line n7">7</div>
+					
+						<div class="line n8">8</div>
+					
+						<div class="line n9">9</div>
+					
+						<div class="line n10">10</div>
+					
+						<div class="line n11">11</div>
+					
+						<div class="line n12">12</div>
+					
+						<div class="line n13">13</div>
+					
+						<div class="line n14">14</div>
+					
+						<div class="line n15">15</div>
+					
+						<div class="line n16">16</div>
+					
+						<div class="line n17">17</div>
+					
+						<div class="line n18">18</div>
+					
+						<div class="line n19">19</div>
+					
+						<div class="line n20">20</div>
+					
+						<div class="line n21">21</div>
+					
+						<div class="line n22">22</div>
+					
+						<div class="line n23">23</div>
+					
+						<div class="line n24">24</div>
+					
+						<div class="line n25">25</div>
+					
+						<div class="line n26">26</div>
+					
+						<div class="line n27">27</div>
+					
+						<div class="line n28">28</div>
+					
+						<div class="line n29">29</div>
+					
+						<div class="line n30">30</div>
+					
+						<div class="line n31">31</div>
+					
+						<div class="line n32">32</div>
+					
+						<div class="line n33">33</div>
+					
+						<div class="line n34">34</div>
+					
+						<div class="line n35">35</div>
+					
+						<div class="line n36">36</div>
+					
+						<div class="line n37">37</div>
+					
+						<div class="line n38">38</div>
+					
+				</td>
+				<td class="code">
+					<pre><div class="container"><div class="line"><code><span class="doctype">&lt;!doctype html&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">html</span> <span class="attribute">lang</span>=<span class="value">"en"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">meta</span> <span class="attribute">charset</span>=<span class="value">"utf-8"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">title</span>&gt;</span>jQuery UI Effects - switchClass Demo<span class="tag">&lt;/<span class="title">title</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"//code.jquery.com/ui/1.10.4/themes/smoothness/jquery-ui.css"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"//code.jquery.com/jquery-1.10.2.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span> <span class="attribute">src</span>=<span class="value">"//code.jquery.com/ui/1.10.4/jquery-ui.js"</span>&gt;</span><span class="javascript"></span><span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">link</span> <span class="attribute">rel</span>=<span class="value">"stylesheet"</span> <span class="attribute">href</span>=<span class="value">"/esource
+esource
+switch_class/style.css"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">style</span>&gt;</span><span class="css"></span></code></div></div><div class="container"><div class="line"><code>  <span class="class">.toggler</span> <span class="rules">{ <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">500</span>px;</span></span> <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">200</span>px;</span></span> <span class="rule"><span class="attribute">position</span>:<span class="value"> relative;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="id">#button</span> <span class="rules">{ <span class="rule"><span class="attribute">padding</span>:<span class="value"> .<span class="number">5</span>em <span class="number">1</span>em;</span></span> <span class="rule"><span class="attribute">text-decoration</span>:<span class="value"> none;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="id">#effect</span> <span class="rules">{ <span class="rule"><span class="attribute">position</span>:<span class="value"> relative;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="class">.newClass</span> <span class="rules">{ <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">240</span>px;</span></span>  <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">1</span>em;</span></span> <span class="rule"><span class="attribute">letter-spacing</span>:<span class="value"> <span class="number">0</span>;</span></span> <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">1.2</span>em;</span></span> <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">0</span>;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="class">.anotherNewClass</span> <span class="rules">{ <span class="rule"><span class="attribute">text-indent</span>:<span class="value"> <span class="number">40</span>px;</span></span> <span class="rule"><span class="attribute">letter-spacing</span>:<span class="value"> .<span class="number">4</span>em;</span></span> <span class="rule"><span class="attribute">width</span>:<span class="value"> <span class="number">410</span>px;</span></span> <span class="rule"><span class="attribute">height</span>:<span class="value"> <span class="number">100</span>px;</span></span> <span class="rule"><span class="attribute">padding</span>:<span class="value"> <span class="number">30</span>px;</span></span> <span class="rule"><span class="attribute">margin</span>:<span class="value"> <span class="number">10</span>px;</span></span> <span class="rule"><span class="attribute">font-size</span>:<span class="value"> <span class="number">1.6</span>em;</span></span> <span class="rule">}</span></span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">style</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">script</span>&gt;</span><span class="javascript"></span></code></div></div><div class="container"><div class="line"><code>  $(<span class="keyword">function</span>() {</code></div></div><div class="container"><div class="line"><code>    $( <span class="string">"#button"</span> ).click(<span class="keyword">function</span>(){</code></div></div><div class="container"><div class="line"><code>      $( <span class="string">".newClass"</span> ).switchClass( <span class="string">"newClass"</span>, <span class="string">"anotherNewClass"</span>, <span class="number">1000</span> );</code></div></div><div class="container"><div class="line"><code>      $( <span class="string">".anotherNewClass"</span> ).switchClass( <span class="string">"anotherNewClass"</span>, <span class="string">"newClass"</span>, <span class="number">1000</span> );</code></div></div><div class="container"><div class="line"><code>      <span class="keyword">return</span> <span class="literal">false</span>;</code></div></div><div class="container"><div class="line"><code>    });</code></div></div><div class="container"><div class="line"><code>  });</code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">script</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">head</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">div</span> <span class="attribute">class</span>=<span class="value">"toggler"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;<span class="title">div</span> <span class="attribute">id</span>=<span class="value">"effect"</span> <span class="attribute">class</span>=<span class="value">"newClass ui-corner-all"</span>&gt;</span></code></div></div><div class="container"><div class="line"><code>      Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede.</code></div></div><div class="container"><div class="line"><code>  <span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">div</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;<span class="title">a</span> <span class="attribute">href</span>=<span class="value">"#"</span> <span class="attribute">id</span>=<span class="value">"button"</span> <span class="attribute">class</span>=<span class="value">"ui-state-default ui-corner-all"</span>&gt;</span>Run Effect<span class="tag">&lt;/<span class="title">a</span>&gt;</span></code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code> </code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">body</span>&gt;</span></code></div></div><div class="container"><div class="line"><code><span class="tag">&lt;/<span class="title">html</span>&gt;</span></code></div></div></pre>
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+</div></div>
+
+<p>Want to learn more about the <code>.switchClass()</code> method? Check out
+the <a href="http://api.jqueryui.com/switchClass/">API documentation</a>.</p>	</div>
+	<div id="sidebar" class="widget-area" role="complementary">
+	<aside class="widget">
+		<h3 class="widget-title">Interactions</h3>
+		<ul>
+			<li><a href="http://jqueryui.com/draggable/">Draggable</a></li><li><a href="http://jqueryui.com/droppable/">Droppable</a></li><li><a href="http://jqueryui.com/resizable/">Resizable</a></li><li><a href="http://jqueryui.com/selectable/">Selectable</a></li><li><a href="http://jqueryui.com/sortable/">Sortable</a></li>		</ul>
+	</aside>
+	<aside class="widget">
+		<h3 class="widget-title">Widgets</h3>
+		<ul>
+			<li><a href="http://jqueryui.com/accordion/">Accordion</a></li><li><a href="http://jqueryui.com/autocomplete/">Autocomplete</a></li><li><a href="http://jqueryui.com/button/">Button</a></li><li><a href="http://jqueryui.com/datepicker/">Datepicker</a></li><li><a href="http://jqueryui.com/dialog/">Dialog</a></li><li><a href="http://jqueryui.com/menu/">Menu</a></li><li><a href="http://jqueryui.com/progressbar/">Progressbar</a></li><li><a href="http://jqueryui.com/slider/">Slider</a></li><li><a href="http://jqueryui.com/spinner/">Spinner</a></li><li><a href="http://jqueryui.com/tabs/">Tabs</a></li><li><a href="http://jqueryui.com/tooltip/">Tooltip</a></li>		</ul>
+	</aside>
+	<aside class="widget">
+		<h3 class="widget-title">Effects</h3>
+		<ul>
+			<li><a href="http://jqueryui.com/addClass/">Add Class</a></li><li><a href="http://jqueryui.com/animate/">Color Animation</a></li><li><a href="http://jqueryui.com/effect/">Effect</a></li><li><a href="http://jqueryui.com/hide/">Hide</a></li><li><a href="http://jqueryui.com/removeClass/">Remove Class</a></li><li><a href="http://jqueryui.com/show/">Show</a></li><li><a href="http://jqueryui.com/switchClass/">Switch Class</a></li><li><a href="http://jqueryui.com/toggle/">Toggle</a></li><li><a href="http://jqueryui.com/toggleClass/">Toggle Class</a></li>		</ul>
+	</aside>
+	<aside class="widget">
+		<h3 class="widget-title">Utilities</h3>
+		<ul>
+			<li><a href="http://jqueryui.com/position/">Position</a></li><li><a href="http://jqueryui.com/widget/">Widget Factory</a></li>		</ul>
+	</aside>
+</div>
+</div>
+
+	</div>
+</div>
+<footer class="clearfix simple">
+	<div class="constrain">
+		<div class="row">
+			<div class="six columns offset-by-three">
+				<h3><span>Books</span></h3>
+				<ul class="books">
+					<!--<li>
+						<a href="http://link.packtpub.com/SHnqUf">
+							<img src="http://jqueryui.com/jquery-wp-content/themes/jquery/content/books/jquery-ui-1.8.jpg" alt="jQuery UI 1.8: The User Interface Library for jQuery by Dan Wellman" width="92" height="114">
+							<span class="book-title">jQuery UI 1.8: The User Interface Library for jQuery</span>
+							<cite>Dan Wellman</cite>
+						</a>
+					</li>-->
+					<li>
+						<a href="http://www.manning.com/vantoll/">
+							<span><img src="http://jqueryui.com/jquery-wp-content/themes/jquery/content/books/jquery-ui-in-action.jpg" alt="jQuery UI in Action by TJ VanToll" width="92" height="114"></span>
+							<strong>jQuery UI in Action</strong><br>
+							<cite>TJ VanToll</cite>
+						</a>
+					</li>
+					<li>
+						<a href="http://link.packtpub.com/PG9pAC">
+							<img src="http://jqueryui.com/jquery-wp-content/themes/jquery/content/books/jquery-ui-themes.jpg" alt="jQuery UI Themes by Adam Boduch" width="92" height="114">
+							<span class="book-title">jQuery UI Themes</span>
+							<cite>Adam Boduch</cite>
+						</a>
+					</li>
+					<li>
+						<a href="http://www.packtpub.com/jquery-userinterface-cookbook/book">
+							<img src="http://jqueryui.com/jquery-wp-content/themes/jquery/content/books/jquery-ui-cookbook.jpg" alt="jQuery UI Cookbook by Adam Boduch" width="92" height="114">
+							<span class="book-title">jQuery UI Cookbook</span>
+							<cite>Adam Boduch</cite>
+						</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		
+<div id="legal">
+	<ul class="footer-site-links">
+			<li><a class="icon-pencil" href="http://learn.jquery.com/">Learning Center</a></li>
+			<li><a class="icon-group" href="http://forum.jquery.com/using-jquery-ui/">Forum</a></li>
+			<li><a class="icon-wrench" href="http://api.jqueryui.com/">API</a></li>
+			<li><a class="icon-twitter" href="http://twitter.com/jqueryui">Twitter</a></li>
+			<li><a class="icon-comments" href="http://irc.jquery.org/">IRC</a></li>
+			<li><a class="icon-github" href="https://github.com/jquery">GitHub</a></li>
+	</ul>
+	<p class="copyright">
+		Copyright 2014 <a href="https://jquery.org/team/">The jQuery Foundation</a>.
+		<a href="https://jquery.org/license/">jQuery License</a>
+		<span class="sponsor-line"><a href="http://mediatemple.net" rel="noindex,nofollow" class="mt-link">Web hosting by Media Temple</a> | <a href="http://www.maxcdn.com" rel="noindex,nofollow" class="mc-link">CDN by MaxCDN</a> | <a href="http://wordpress.org/" class="wp-link">Powered by WordPress</a> | Thanks: <a href="https://jquery.org/members/">Members</a>, <a href="https://jquery.org/sponsors/">Sponsors</a></span>
+	</p>
+</div>
+
+	</div>
+</footer>
+
+<script>
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-1076265-1']);
+    _gaq.push(['_setDomainName', 'jqueryui.com']);
+    _gaq.push(['_setAllowLinker', true]);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+    })();
+</script>
+
+</body>
+</html>

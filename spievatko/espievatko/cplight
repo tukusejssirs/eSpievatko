@@ -1,0 +1,1 @@
+sudo mkdir /var/www/espievatko && sudo cp -r cookbook/ docs/ local/ logo.gif pmwiki* pub scripts/ wiki* /var/www/espievatko

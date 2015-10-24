@@ -1,0 +1,10 @@
+.recipelist table 
+  { border:1px solid #cccccc; }
+
+.recipelist tr.ind1,
+.recipelist tr.ind3
+  { background-color:#f7f7f7; }
+
+.recipelist td,
+.recipelist th 
+  { vertical-align:top; padding:2px; }

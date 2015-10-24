@@ -1,0 +1,9 @@
+sudo mkdir /var/www/html/espievatko/wiki.d && 
+
+
+sudo cp -r * /var/www/html/espievatko/     # cp pmwiki files
+sudo chown -R ubuntu-gnome /var/www   # chown to ubuntu-gnome
+sudo chmod -R 777 /var/www            # chmod to 777
+
+
+cp -r * /var/www/html/espievatko/ && sudo chown -R ubuntu-gnome /var/www && sudo chmod -R 777 /var/www

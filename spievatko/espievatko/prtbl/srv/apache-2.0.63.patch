@@ -1,0 +1,22 @@
+--- srclib/apr/threadproc/unix/procsup.c.orig	2008-03-28 18:58:03.000000000 +0100
++++ srclib/apr/threadproc/unix/procsup.c	2008-03-28 18:58:15.000000000 +0100
+@@ -20,7 +20,7 @@
+ {
+     int x;
+ 
+-    chdir("/");
++    /*chdir("/");*/
+ #if !defined(MPE) && !defined(OS2) && !defined(TPF) && !defined(BEOS)
+     /* Don't detach for MPE because child processes can't survive the death of
+      * the parent. */
+--- server/main.c.orig	2007-08-28 07:23:46.000000000 +0200
++++ server/main.c	2008-03-28 18:54:38.000000000 +0100
+@@ -384,7 +384,7 @@
+     char c;
+     int configtestonly = 0;
+     const char *confname = SERVER_CONFIG_FILE;
+-    const char *def_server_root = HTTPD_ROOT;
++    const char *def_server_root = dirname(argv[0]);
+     const char *temp_error_log = NULL;
+     process_rec *process;
+     server_rec *server_conf;

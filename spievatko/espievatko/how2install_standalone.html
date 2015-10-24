@@ -1,0 +1,269 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"><head>
+  <title>PmWiki | Cookbook / RunningPmwikiOnMageiaLinux </title>
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <link rel="stylesheet" href="how2install_standalone_files/pmwiki.css" type="text/css">
+  <!--HTMLHeader--><style type="text/css"><!--
+  ul, ol, pre, dl, p { margin-top:0px; margin-bottom:0px; }
+  code.escaped { white-space: nowrap; }
+  .vspace { margin-top:1.33em; }
+  .indent { margin-left:40px; }
+  .outdent { margin-left:40px; text-indent:-40px; }
+  a.createlinktext { text-decoration:none; border-bottom:1px dotted gray; }
+  a.createlink { text-decoration:none; position:relative; top:-0.5em;
+    font-weight:bold; font-size:smaller; border-bottom:none; }
+  img { border:0px; }
+  .apprlink { font-size:smaller; }
+  .Pm { color:purple; font-style:italic; }
+  .Py { color:navy; }
+  .note { color:green; font-style:italic; }
+
+  dl.dlcol dt { float:left; padding-right:0.5em; }
+  dl.dlcol dd { margin-left:13em; }
+.editconflict { color:green; 
+  font-style:italic; margin-top:1.33em; margin-bottom:1.33em; }
+
+  table.markup { border:2px dotted #ccf; width:90%; }
+  td.markup1, td.markup2 { padding-left:10px; padding-right:10px; }
+  table.vert td.markup1 { border-bottom:1px solid #ccf; }
+  table.horiz td.markup1 { width:23em; border-right:1px solid #ccf; }
+  table.markup caption { text-align:left; }
+  div.faq p, div.faq pre { margin-left:2em; }
+  div.faq p.question { margin:1em 0 0.75em 0; font-weight:bold; }
+  div.faqtoc div.faq * { display:none; }
+  div.faqtoc div.faq p.question 
+    { display:block; font-weight:normal; margin:0.5em 0 0.5em 20px; line-height:normal; }
+  div.faqtoc div.faq p.question * { display:inline; }
+   
+    .frame 
+      { border:1px solid #cccccc; padding:4px; background-color:#f9f9f9; }
+    .lfloat { float:left; margin-right:0.5em; }
+    .rfloat { float:right; margin-left:0.5em; }
+a.varlink { text-decoration:none; }
+
+--></style><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">  <meta name="robots" content="index,follow">
+<link rel="shortcut icon" href="http://www.pmwiki.org/favicon.ico">
+    <script src="how2install_standalone_files/urchin.js" type="text/javascript"></script>
+    <script type="text/javascript">
+      _uacct = 'UA-582887-1';
+      urchinTracker();
+    </script><link rel="stylesheet" type="text/css" href="how2install_standalone_files/local.css">
+<link rel="stylesheet" type="text/css" href="how2install_standalone_files/Cookbook.css">
+
+</head>
+<body>
+<!--PageHeaderFmt-->
+  <div id="wikilogo"><a href="http://www.pmwiki.org/wiki"><img src="how2install_standalone_files/pmwiki-32.gif" alt="PmWiki" border="0"></a></div>
+  <div id="wikihead">
+  <form action="http://www.pmwiki.org/wiki">
+    <span class="headnav"><a href="http://www.pmwiki.org/wiki/Cookbook/RecentChanges" accesskey="c">Recent Changes</a> -</span>
+    <input name="n" value="Cookbook.RunningPmwikiOnMageiaLinux" type="hidden">
+    <input name="action" value="search" type="hidden">
+    <a href="http://www.pmwiki.org/wiki/Site/Search">Search</a>:
+    <input name="q" class="inputbox searchbox" type="text">
+    <input class="inputbutton searchbutton" value="Go" type="submit"></form></div>
+<!--/PageHeaderFmt-->
+  <table id="wikimid" cellpadding="0" cellspacing="0" width="100%"><tbody><tr>
+<!--PageLeftFmt-->
+      <td id="wikileft" valign="top">
+        <ul><li><a class="wikilink" href="http://www.pmwiki.org/wiki/PmWiki/PmWiki">Home page</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Main/WikiSandbox">Wiki sandbox</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Site/AllRecentChangesShort">Most recent changes</a>
+</li></ul><p><a name="cookbook" id="cookbook"></a>
+</p>
+<p class="vspace sidehead"> <a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Cookbook">Cookbook</a>
+</p><ul><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Administration">Administration</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Uploads">Attachments <span style="font-size:83%">(uploads)</span></a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Blog">Blog</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/CMS">CMS</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/CSS">CSS</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Editing">Editing</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Forms">Forms</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Images">Images</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Includes">Includes</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/International">International</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Layout">Layout</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Links">Links</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Markup">Markup</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/MarkupOnly">Markup only</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/MarkupWriting">Markup writing</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Menus">Menus <span style="font-size:83%">(navigation)</span></a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Media">Media</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/PageList">Page lists</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/PageNaming">Page naming</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/PageVariables">Page variables</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/PIM">PIM</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Publishing">Publishing</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/RSS">RSS</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Searching">Searching</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Security">Security</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Skins/Skins">Skins</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/SystemTools">System tools</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Tables">Tables</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/WikiConversion">Wiki conversion</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/WikiTrails">WikiTrails</a>
+<div class="vspace"></div></li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Obsolete">Obsolete</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Maintenance">Maintenance</a>
+</li></ul><p class="vspace"><a name="pmwiki" id="pmwiki"></a>
+</p>
+<p class="vspace sidehead"> <a class="wikilink" href="http://www.pmwiki.org/wiki/PmWiki/PmWiki">PmWiki</a>
+</p><ul><li><a class="wikilink" href="http://www.pmwiki.org/wiki/PmWiki/FAQ">FAQ</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/PmWiki/PmWikiFeatures">Features</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/PmWiki/Download">Download</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/PmWiki/Installation">Installation</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/PmWiki/BasicEditing">Basic editing</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/PmWiki/DocumentationIndex">Documentation index</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/PmWiki/PmWikiPhilosophy">PmWiki philosophy</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/PmWiki/ReleaseNotes">Release notes</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/PmWiki/ContactUs">Contact us</a>
+</li></ul><p class="vspace"><a name="pmwikiorg" id="pmwikiorg"></a> 
+</p>
+<p class="vspace sidehead"> <a class="urllink" href="http://www.pmwiki.org/" rel="nofollow">pmwiki.org</a>
+</p><ul><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Cookbook">Cookbook <span style="font-size:83%">(addons)</span></a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/Skins/Skins">Skins <span style="font-size:83%">(themes)</span></a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/PITS/PITS">PITS <span style="font-size:83%">(issue tracking)</span></a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/PmWiki/MailingLists">Mailing lists</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/PmWiki/PmWikiUsers">PmWiki users</a>
+</li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/PmWiki/SuccessStories">Success stories</a>
+<div class="vspace"></div></li><li><a class="wikilink" href="http://www.pmwiki.org/wiki/PmWiki/SendPmMoney">Send Pm money</a>
+<div class="vspace"></div></li><li><em><a class="wikilink" href="http://www.pmwiki.org/wiki/PmWiki/OtherLanguages">Other languages</a></em>
+</li></ul><p class="vspace"><a name="ads" id="ads"></a>
+</p>
+<div class="vspace"></div>  <div style="text-align:center; position:absolute; width:160px;">
+  <script type="text/javascript"><!--
+  google_ad_client = "ca-pub-2896276000075357";
+  /* pmwiki-nnn */
+  google_ad_slot = "8973766002";
+  google_ad_width = 160;
+  google_ad_height = 600;
+  //-->
+  </script>
+  <script type="text/javascript" src="how2install_standalone_files/show_ads.js">
+  </script>
+  </div>
+</td>
+<!--/PageLeftFmt-->
+      <td id="wikibody" valign="top">
+<!--PageActionFmt-->
+        <div id="wikicmds"><ul><li class="browse">      <a accesskey="" rel="nofollow" class="selflink" href="http://www.pmwiki.org/wiki/Cookbook/RunningPmwikiOnMageiaLinux">View</a>
+</li><li class="edit">      <a accesskey="e" rel="nofollow" class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/RunningPmwikiOnMageiaLinux?action=edit">Edit</a>
+</li><li class="diff">   <a accesskey="h" rel="nofollow" class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/RunningPmwikiOnMageiaLinux?action=diff">History</a>
+</li><li class="upload">    <a accesskey="" rel="nofollow" class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/RunningPmwikiOnMageiaLinux?action=upload">Attach</a>
+</li><li class="print">     <a accesskey="" rel="nofollow" class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/RunningPmwikiOnMageiaLinux?action=print">Print</a>
+</li><li class="backlinks"> <a accesskey="" rel="nofollow" class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/RunningPmwikiOnMageiaLinux?action=search&amp;q=link=Cookbook.RunningPmwikiOnMageiaLinux">Backlinks</a>
+</li></ul>
+</div>
+<!--PageTitleFmt-->
+        <div id="wikititle">
+          <div class="pagegroup"><a href="http://www.pmwiki.org/wiki/Cookbook">Cookbook</a> /</div>
+          <h1 class="pagetitle">RunningPmwikiOnMageiaLinux</h1></div>
+<!--PageText-->
+<div id="wikitext">
+<div style="clear:right;">
+</div>
+<div style="color: black; background-color: #f7f7f7; border: 1px solid #cccccc; padding: 4px;"> 
+<div class="property-Summary">Summary: Running Pmwiki on Mageia Linux</div>
+<div class="property-Version">Version: </div>
+<div class="property-Prerequisites">Prerequisites: </div>
+<div class="property-Status">Status: </div>
+<div class="property-Maintainer">Maintainer: </div>
+<div class="property-Categories">Categories: <a class="categorylink" href="http://www.pmwiki.org/wiki/Category/Administration">Administration</a></div>
+<div class="property-Users">Users:  (<a class="createlinktext" rel="nofollow" href="http://www.pmwiki.org/wiki/Cookbook/RunningPmwikiOnMageiaLinux-Users?action=edit">view</a><a rel="nofollow" class="createlink" href="http://www.pmwiki.org/wiki/Cookbook/RunningPmwikiOnMageiaLinux-Users?action=edit">?</a> / <a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/RunningPmwikiOnMageiaLinux-Users?action=edit">edit</a>)</div>
+<div class="property-Discussion">Discussion: <a class="createlinktext" rel="nofollow" href="http://www.pmwiki.org/wiki/Cookbook/RunningPmwikiOnMageiaLinux-Talk?action=edit">RunningPmwikiOnMageiaLinux-Talk</a><a rel="nofollow" class="createlink" href="http://www.pmwiki.org/wiki/Cookbook/RunningPmwikiOnMageiaLinux-Talk?action=edit">?</a></div>
+</div>
+<div class="vspace"></div><h3>Questions answered by this recipe</h3>
+<p>- How easy is to install Pmwiki on Mageia Linux?<br>- It is VERY easy.
+</p>
+<p class="vspace"><span style="display: none;"> All sections are optional, you can remove those that do not apply to your recipe, and add new ones.</span>
+</p><div style="text-align: center;"> 
+<p><a name="top" id="top"></a>
+</p><h1>Running Pmwiki on Mageia Linux</h1>
+<p class="vspace"><a href="#Offline">Standalone Installation (Offline Use Only)</a>
+</p></div>
+<p class="vspace" style="text-align: right;"><a name="Offline" id="Offline"></a>   <a href="#top">_^_</a>
+</p><h2>Standalone Installation (Offline Use Only)</h2>
+<p>Tested and Confirmed!
+</p>
+<p class="vspace">You need root privileges
+</p>
+<p class="vspace">+ Install php
+</p><div class="indent">(by installing the package " task-lamp-php ")
+</div><p class="vspace">+ Use the Mageia Control Center (mcc) to start the http daemon...
+</p><div class="indent">Mageia Control Center --&gt; System --&gt; Manage System Services --&gt; httpd 
+</div><p class="vspace">+ Confirm that Apache works by simply visiting the following address, with your web browser...
+</p><div class="indent"><a class="urllink" href="http://localhost/" rel="nofollow">http://localhost/</a>
+<div class="vspace"></div></div><div class="indent">-You should get a page, saying...
+<div class="indent">It works!
+</div></div><p class="vspace">+ As Root (or while having root privileges (see: sudo, kdesu, su, etc)) <a class="wikilink" href="http://www.pmwiki.org/wiki/PmWiki/Installation">install</a> pmwiki in...
+</p><div class="indent">/var/www/html/the-name-of-my-wiki/
+<div class="vspace"></div></div><div class="indent">- Important note:
+<div class="indent">Your wiki, and it's files and folders
+</div><div class="indent">need to have root Permissions, to work,
+</div><div class="indent">except for the "uploads" folder
+</div><div class="indent">(you can use a system link for that one).
+</div></div><p class="vspace">+ Finally, if you did everything right, you should be able to visit your local standalone wiki, <br>and edit it's pages, as a simple user, by opening the following address with your web browser...
+</p><div class="indent"><a class="urllink" href="http://localhost/the-name-of-my-wiki/" rel="nofollow">http://localhost/the-name-of-my-wiki/</a>
+</div><p class="vspace">IMPORTANT SECURITY NOTE:<br>The above configuration was tested for offline use ONLY.<br>That is... in your ...<br>-&gt; Mageia Control Center --&gt; Security --&gt; Personal Firewall
+</p>
+<p class="vspace">... if nothing is checked (especially "Web server"), then you are PROBABLY alright.
+</p>
+<p class="vspace" style="text-align: right;"><a href="#top">_^_</a>
+</p><hr>
+<div class="vspace"></div><h2>Troubleshooting</h2>
+<p style="text-align: right;"><a href="#top">_^_</a>
+</p>
+<p class="vspace">You may also want to add the "apache user" in your user's team. <br>(Installing from a Live Mageia, <br>will probably have set your user account <br>to belong in the "live team", by default. <br>
+This can fix some "Access forbidden!", "error 403", <br>or other user rights problems.
+</p>
+<p class="vspace">Go to
+</p><pre>   Mageia Control Center --&gt; System --&gt; Manage System Users
+</pre><p>Menu
+</p><pre>   Options
+</pre><p>Uncheck
+</p><pre>   | | Filter System Users
+</pre><p class="vspace">Choose (tab) 
+</p><pre>   Users
+</pre><p>Double click on the "apache" user.  <br>Choose (tab) 
+</p><pre>   Teams
+</pre><p>Check
+</p><pre>   |x| live
+   |x| new_default_team   (if you have set your user's account 
+                               to belong to a new_default_team)
+</pre><p>Exit Users Management.<br>Restart the httd deamon (as explained above).
+</p>
+<p class="vspace" style="text-align: right;"><a href="#top">_^_</a>
+</p>
+<p class="vspace" style="text-align: right;"><a href="#top">_^_</a>
+</p>
+<p class="vspace"><a name="seealso" id="seealso"></a>
+</p><h2>See also</h2>
+<p><a class="wikilink" href="http://www.pmwiki.org/wiki/Cookbook/Standalone">Standalone</a>
+<a class="categorylink" href="http://www.pmwiki.org/wiki/Category/MageiaLinux">Mageia Linux</a>
+</p>
+<p class="vspace"><a name="comments" id="comments"></a>
+</p><h2>Comments</h2>
+<p>See discussion at <a class="createlinktext" rel="nofollow" href="http://www.pmwiki.org/wiki/Cookbook/RunningPmwikiOnMageiaLinux-Talk?action=edit">RunningPmwikiOnMageiaLinux-Talk</a><a rel="nofollow" class="createlink" href="http://www.pmwiki.org/wiki/Cookbook/RunningPmwikiOnMageiaLinux-Talk?action=edit">?</a>
+</p>
+<p class="vspace"><a name="faq" id="faq"></a>
+</p><div class="faq" style="display: none;"> 
+<p class="vspace question"></p>
+<p>
+</p></div><div style="font-size: .9em; border-top: 1px solid #ddd; margin-top: 1em;"> 
+</div>
+</div>
+
+      </td>
+    </tr></tbody></table>
+<!--PageFooterFmt-->
+  <div id="wikifoot">
+    <div class="footnav">
+      <a rel="nofollow" href="http://www.pmwiki.org/wiki/Cookbook/RunningPmwikiOnMageiaLinux?action=edit">Edit</a> -
+      <a rel="nofollow" href="http://www.pmwiki.org/wiki/Cookbook/RunningPmwikiOnMageiaLinux?action=diff">History</a> -
+      <a rel="nofollow" href="http://www.pmwiki.org/wiki/Cookbook/RunningPmwikiOnMageiaLinux?action=print" target="_blank">Print</a> -
+      <a href="http://www.pmwiki.org/wiki/Cookbook/RecentChanges">Recent Changes</a> -
+      <a href="http://www.pmwiki.org/wiki/Site/Search">Search</a></div>
+    <div class="lastmod">Page last modified on July 09, 2012, at 11:11 AM</div></div>
+<!--HTMLFooter-->
+
+
+</body></html>

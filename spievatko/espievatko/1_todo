@@ -1,0 +1,28 @@
+espievatko
+==========
+
+MAIN
+----
+
+- create .cho fls
+- create .cho > .pdf |  convertor
+- create wss (sk | en)
+- search/filter with select options (kb and mouse input; select all/none boolean box/btn)
+- download options: .cho | .pdf | .odt | .html | .doc
+
+
+.cho
+----
+
+- zjednotene oznacenie akordov (create a wss with a list)
+- zjednotenie nazvov (original, prip. alternativa v zatvorke)
+- odstranenie duplicitnych piesni
+- poukazanie na alternativne texty
+- modifikacia textu v pripade typografickych preklepov, novsich verzii textov od povodnych autorov (alebo prekladatelov/vydavatelov)
+- pouzivanie hranatych zatvoriek s dvojbodkami na oznacenie opakovania (find some workaround for .cho)
+- pouzivanie znamienka krat (×) namiesto x
+- pouzivanie oblych apostrofov namiesto rovnych apostrofov, prip. dlznov
+- pouzivanie oblych uvodzoviek namiesto rovnych uvodzoviek, prip. ciarok
+- pouzivanie elipsy (trojbodky, …) namiesto troch bodiek (...)
+
+POZIADAT O POVOLENIE NA BEZPLATNE ROZSIROVANIE OD JOZEFA RACAKA A OD AUTOROV PIESNI!!!

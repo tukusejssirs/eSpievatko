@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='chordpro.css'/>
+<title>eSpievatko | Vyhľadávanie</title>
+</head>
+<body>
+
+<?php include("chordpro.php");?>
+
+<!-- Menu -->
+<div class="menu">
+	<div class="logo">
+	<ul>
+		<li>
+        <p color="#fff"><span class="e">e</span>Spievatko</p></a>
+		</li>
+	<ul>
+	</div>
+        <div class="nav"> 
+            <ul>
+                <li><a href="" accesskey="h">Domov</a></li>
+                <li><a href="" accesskey="f">Vyhľadávanie</a></li>
+                <li><a href="" accesskey="k">Kontakt</a></li>
+            </ul> 
+        </div>
+    </div>
+
+
+
+
+<h1 class="espievatko"><span class="e">e</span>Spievatko</h1>
+
+<div class="col2">
+	<p>Toto je test vyhľadávania v eSpievatku.</p>
+	<p>Nascannované knižné vydanie Spievatka si môžete stiahnuť <a href="">tu</a>.<p>
+	<div class="break">
+	<p>Predgenerované verzie eSpievatka sú len dve:</p>
+		<ul class="basic">
+			<li><a href="">verzia na čítanie z obrazovky</a> (PDF vo formáte A5),</li>
+			<li><a href="">verzia na tlač</a> (PDF vo formáte A4 zbrožované; 2 strany na A4).</li>
+		</ul>
+	</div>
+</div>
+
+<input  type="search"
+        name="Hľadať podľa názvu"
+          id="nazov"
+       class="nazov"
+        list="nazov"
+ placeholder="Zadajte názov piesne"
+autocomplete="on"   /* check if it is any good */
+   accesskey="n"
+/><br/>
+<div class="col2">
+
+
+<form action='http://localhost/espievatko/pmwiki.php/Newest/Newest?action=edit' method='post'>
+	<input type='hidden' name='action' value='edit' />
+	<input type='hidden' name='n' value='Newest.Newest' />
+	<input type='hidden' name='basetime' value='1399238497' />
+
+<textarea type="text"
+   accesskey=","
+autocomplete="off"
+ placeholder="Vložte sem text s akordami vo formáte ChordPro (.cho)."
+       class="texty"
+   autofocus="0"
+  spellcheck="no"
+       width="100%"
+></textarea>
+<input class="mono" id="submit" name="submit" type="submit" value="Uložiť">
+</form>
+
+<div class="break">
+
+<object name="cho" width="100%" class="object" type="text/html" text-align= data="test.cho"/>
+</div>
+</div>
+</body></html>

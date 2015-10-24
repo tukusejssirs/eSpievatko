@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="sk">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<link rel='stylesheet' type='text/css' href='chordpro.css'/>
+<title>eSpievatko | Vyhľadávanie</title>
+</head>
+<body>
+<h1 class="espievatko"><span class="e">e</span>Spievatko</h1>
+
+<div class="col2">
+	<p>Toto je test vyhladavania v eSpievatku.</p>
+	<p>Nascannované knižné vydanie Spievatka si môžete stiahnuť <a href="">tu</a>.<p>
+	<div class="break">
+	<p>Predgenerované verzie eSpievatka sú len dve:</p>
+		<ul>
+			<li><a href="">verzia na čítanie z obrazovky</a> (PDF vo formáte A5),</li>
+			<li><a href="">verzia na tlač</a> (PDF vo formáte A4 zbrožované; 2 strany na A4).</li>
+		</ul>
+	</div>
+</div>
+<p>V nasledovnom zozname si vyberte piesne, ktoré chcete, aby boli vygenerované do Vášho výberu piesni.<br/>
+Piesne označíte kliknutím na príslušný riadok alebo pomocou prístupových klávesou (access keys) <span class="terminal">J,</span> (nižšie) a <span class="terminal">K</span> (vyššie) sa môžete pohybovať v zozname a <span class="terminal">medzerníkom</span> označujete piesne.<br/>
+Kvôli obrovskému množstvu piesní som vytvoril vyhľadávanie/filtrovanie. Je vhodné poznamenať, že označenia piesní sa vyhľadávaním <b><i>nerušia</i></b>.<p>
+
+<table class="seltbl">
+<tr class="searchrow">
+	<td>
+<input  type="search"
+        name="Hľadať podľa čísla piesne"
+          id="cislo"
+       class="cislo"
+        list="cislo"
+ placeholder="Ĉíslo"
+autocomplete="on"   /* check if it is any good */
+   accesskey="c"
+/>
+	</td>
+	<td>
+<input  type="search"
+        name="Hľadať podľa názvu"
+          id="nazov"
+       class="search"
+        list="nazov"
+ placeholder="Zadajte názov piesne"
+autocomplete="on"   /* check if it is any good */
+   accesskey="n"
+/>
+	</td>
+	<td>
+<input  type="search"
+        name="Hľadať podľa autora"
+          id="autor"
+       class="search"
+        list="autor"
+ placeholder="Zadajte autora piesne"
+autocomplete="on"   /* check if it is any good */
+   accesskey="a"
+/>
+	</td>
+	<td>
+<input  type="search"
+        name="Hľadať podľa obdobia/tagov"
+          id="obdobie"
+       class="search"
+        list="obdobie"
+ placeholder="Zadajte obdobie/tagy"
+autocomplete="on"   /* check if it is any good */
+   accesskey="o"
+/>
+	</td>
+</tr>
+
+<tr class="th">
+	<th>Číslo</th>
+	<th>Názov</th>
+	<th>Autor</th>
+	<th>Obdobie/tagy</th>
+</tr>
+<tr>
+	<td>0017</td>
+	<td>Otče, príjmi chlieb</td>
+	<td>sr. Eliška Elena Bielková FMA</td>
+	<td>obetovanie</td>
+</tr>
+</table>
+
+
+<br/>
+<div class="col2">
+<form method="post" action="">
+<textarea  type="text"
+   accesskey="t"
+autocomplete="off"
+ placeholder="Vložte sem text s akordami vo formáte ChordPro (.cho)."
+       class="texty"
+   autofocus
+spellcheck=no
+></textarea>
+<input id="submit" name="submit" type="submit" value="Uložiť">
+</form>
+
+<div class="break">
+<br/><br/><br/><p class="small">Príklad textu:</p>
+<object name="cho" width="100%" class="object" type="text/html" data="test.cho"/>
+</div>
+</div>
+</body></html>

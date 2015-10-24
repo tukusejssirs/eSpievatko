@@ -1,0 +1,18 @@
+.diffbox { width:570px; }
+
+ul.inline { margin:0px; padding:0px; }
+ul.inline li { display:inline; padding-right:5px; }
+
+table.PITS th { background-color: #eeeeee; }
+
+/* for long changelogs */
+.overflowauto { height:9.33em; overflow: auto; border: 1px solid #dddddd; }
+
+/* for PmWiki.GroupFooter : invisible here, visible on other sites. */
+.commentout-pmwikiorg { display: none; }
+/* For the bottom of the Documentation pages  */
+div.i18n-links { font-size: smaller;}
+div.i18n-links a.createlink { display:none; }
+div.i18n-links a.createlinktext {color: #888888; border: none;}
+div.i18n-links a.selflink { color: black; text-decoration: none; }
+
