@@ -1,0 +1,1213 @@
+#
+# A fatal error has been detected by the Java Runtime Environment:
+#
+#  SIGSEGV (0xb) at pc=0xb595ddd4, pid=9041, tid=2964330688
+#
+# JRE version: 7.0_25-b30
+# Java VM: OpenJDK Client VM (23.7-b01 mixed mode, sharing linux-x86 )
+# Problematic frame:
+# C  [libmergedlo.so+0x136cdd4]  SvNumberFormatsSupplierObj::GetNumberFormatter() const+0x4
+#
+# Failed to write core dump. Core dumps have been disabled. To enable core dumping, try "ulimit -c unlimited" before starting Java again
+#
+# If you would like to submit a bug report, please include
+# instructions on how to reproduce the bug and visit:
+#   https://bugs.launchpad.net/ubuntu/+source/openjdk-7/
+#
+
+---------------  T H R E A D  ---------------
+
+Current thread is native thread
+
+siginfo:si_signo=SIGSEGV: si_errno=0, si_code=1 (SEGV_MAPERR), si_addr=0x00000024
+
+Registers:
+EAX=0x00000000, EBX=0xad7c7000, ECX=0x00000001, EDX=0x00000000
+ESP=0xbfb4032c, EBP=0xbfb403d8, ESI=0xaccf0b00, EDI=0x00000000
+EIP=0xb595ddd4, EFLAGS=0x00010286, CR2=0x00000024
+
+Top of Stack: (sp=0xbfb4032c)
+0xbfb4032c:   ad4ed712 00000000 b77405e8 bfb403b8
+0xbfb4033c:   0938c338 acd1f550 accf0ae0 accf0b00
+0xbfb4034c:   b28e7000 b28e7000 08c6c2e8 09578688
+0xbfb4035c:   b28408c7 09b99274 08c6c358 b2800570
+0xbfb4036c:   b2800590 b2800570 ad7c7000 bfb40448
+0xbfb4037c:   ad012145 093e2978 aeb0d094 b595e040
+0xbfb4038c:   bfb403b0 acf45e07 ad7f15b4 09b991f0
+0xbfb4039c:   00000021 bfb405b4 09a59060 bfb403d8 
+
+Instructions: (pc=0xb595ddd4)
+0xb595ddb4:   89 ef e8 25 54 21 ff eb e2 90 66 90 8b 44 24 04
+0xb595ddc4:   8b 40 24 83 c0 04 c3 90 8d 74 26 00 8b 44 24 04
+0xb595ddd4:   8b 40 24 8b 00 c3 8d b6 00 00 00 00 8b 44 24 04
+0xb595dde4:   8b 54 24 08 8b 40 24 89 10 c3 66 90 55 57 56 53 
+
+Register to memory mapping:
+
+EAX=
+[error occurred during error reporting (printing register info), id 0xb]
+
+Stack: [0xbfaf3000,0xbfb43000],  sp=0xbfb4032c,  free space=308k
+Native frames: (J=compiled Java code, j=interpreted, Vv=VM code, C=native code)
+C  [libmergedlo.so+0x136cdd4]  SvNumberFormatsSupplierObj::GetNumberFormatter() const+0x4
+C  [libswlo.so+0x9a4244]  SwXTextDocument::getTypes()+0x94
+C  [libintrospectionlo.so+0xf216]  introspection_component_getFactory+0x5706
+C  [libintrospectionlo.so+0x10245]  introspection_component_getFactory+0x6735
+C  [libmergedlo.so+0xea32d7]  GetSbUnoObject(rtl::OUString const&, com::sun::star::uno::Any const&)+0x7c67
+C  [libmergedlo.so+0xea3ac0]  GetSbUnoObject(rtl::OUString const&, com::sun::star::uno::Any const&)+0x8450
+C  [libmergedlo.so+0xea4054]  GetSbUnoObject(rtl::OUString const&, com::sun::star::uno::Any const&)+0x89e4
+C  [libmergedlo.so+0xeadd8d]  SbModule::createCOMWrapperForIface(com::sun::star::uno::Any&, SbClassModuleObject*)+0x104d
+C  [libmergedlo.so+0xeae421]  sbxToUnoValue(SbxVariable*)+0x21
+C  [libmergedlo.so+0xe6f672]  BasicManager::SetGlobalUNOConstant(char const*, com::sun::star::uno::Any const&)+0xa2
+C  [libmergedlo.so+0x119198d]  SfxObjectShell::SetCurrentComponent(com::sun::star::uno::Reference<com::sun::star::uno::XInterface> const&)+0x23d
+C  [libmergedlo.so+0x128644a]  SfxViewShell::SetCurrentDocument() const+0x3a
+C  [libmergedlo.so+0x1286548]  SfxViewShell::Activate(unsigned char)+0xc8
+
+
+---------------  P R O C E S S  ---------------
+
+VM state:at safepoint (shutting down)
+
+VM Mutex/Monitor currently owned by a thread:  ([mutex/lock_event])
+[0x0a26c090] Threads_lock - owner thread: 0x0a2e1000
+
+Heap
+ def new generation   total 4928K, used 2523K [0x6e980000, 0x6eed0000, 0x79420000)
+  eden space 4416K,  57% used [0x6e980000, 0x6ebf6ee0, 0x6edd0000)
+  from space 512K,   0% used [0x6edd0000, 0x6edd0000, 0x6ee50000)
+  to   space 512K,   0% used [0x6ee50000, 0x6ee50000, 0x6eed0000)
+ tenured generation   total 10944K, used 0K [0x79420000, 0x79ed0000, 0x8e980000)
+   the space 10944K,   0% used [0x79420000, 0x79420000, 0x79420200, 0x79ed0000)
+ compacting perm gen  total 12288K, used 296K [0x8e980000, 0x8f580000, 0x92980000)
+   the space 12288K,   2% used [0x8e980000, 0x8e9ca130, 0x8e9ca200, 0x8f580000)
+    ro space 10240K,  60% used [0x92980000, 0x92f8c958, 0x92f8ca00, 0x93380000)
+    rw space 12288K,  61% used [0x93380000, 0x93ae62d8, 0x93ae6400, 0x93f80000)
+
+Card table byte_map: [0xa6558000,0xa6684000] byte_map_base: 0xa61e3400
+
+Polling page: 0xaf505000
+
+Code Cache  [0xa6704000, 0xa67ac000, 0xa8704000)
+ total_blobs=178 nmethods=44 adapters=69 free_code_cache=32103Kb largest_free_block=32873856
+
+Compilation events (10 events):
+Event: 0.254 Thread 0x0a2f3400   40             java.util.Arrays::copyOfRange (63 bytes)
+Event: 0.255 Thread 0x0a2f3400 nmethod 40 0xa67a91c8 code [0xa67a9340, 0xa67a96e8]
+Event: 0.255 Thread 0x0a2f3400   41             sun.misc.ProxyGenerator$ConstantPool$IndirectEntry::hashCode (15 bytes)
+Event: 0.255 Thread 0x0a2f3400 nmethod 41 0xa67a9988 code [0xa67a9a80, 0xa67a9b10]
+Event: 0.255 Thread 0x0a2f3400   42             sun.misc.ProxyGenerator$ConstantPool$Entry::<init> (5 bytes)
+Event: 0.255 Thread 0x0a2f3400 nmethod 42 0xa67a9b48 code [0xa67a9c40, 0xa67a9cc0]
+Event: 0.255 Thread 0x0a2f3400   43             sun.misc.ProxyGenerator$ConstantPool$Entry::<init> (5 bytes)
+Event: 0.255 Thread 0x0a2f3400 nmethod 43 0xa67a9d08 code [0xa67a9e00, 0xa67a9e80]
+Event: 0.255 Thread 0x0a2f3400   44  s          java.io.DataOutputStream::write (14 bytes)
+Event: 0.256 Thread 0x0a2f3400 nmethod 44 0xa67a9ec8 code [0xa67a9ff0, 0xa67aa1ec]
+
+GC Heap History (0 events):
+No events
+
+Deoptimization events (0 events):
+No events
+
+Internal exceptions (10 events):
+Event: 0.264 Thread 0x0a345c00 Threw 0x6eb5eb60 at /build/buildd/openjdk-7-7u25-2.3.12/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1235
+Event: 0.264 Thread 0x0a345c00 Threw 0x6eb5f028 at /build/buildd/openjdk-7-7u25-2.3.12/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1235
+Event: 0.266 Thread 0x0a345c00 Threw 0x6eb64348 at /build/buildd/openjdk-7-7u25-2.3.12/build/openjdk/hotspot/src/share/vm/prims/jni.cpp:716
+Event: 0.266 Thread 0x0a345c00 Threw 0x6eb65760 at /build/buildd/openjdk-7-7u25-2.3.12/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1235
+Event: 0.266 Thread 0x0a345c00 Threw 0x6eb66808 at /build/buildd/openjdk-7-7u25-2.3.12/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1235
+Event: 0.266 Thread 0x0a345c00 Threw 0x6eb66ca8 at /build/buildd/openjdk-7-7u25-2.3.12/build/openjdk/hotspot/src/share/vm/prims/jvm.cpp:1235
+Event: 0.295 Thread 0x0a38dc00 Threw 0x6eb73230 at /build/buildd/openjdk-7-7u25-2.3.12/build/openjdk/hotspot/src/share/vm/prims/jni.cpp:716
+Event: 0.302 Thread 0x0a38dc00 Threw 0x6eb893e0 at /build/buildd/openjdk-7-7u25-2.3.12/build/openjdk/hotspot/src/share/vm/prims/jni.cpp:716
+Event: 0.310 Thread 0x0a38a400 Threw 0x6eb9f590 at /build/buildd/openjdk-7-7u25-2.3.12/build/openjdk/hotspot/src/share/vm/prims/jni.cpp:716
+Event: 0.319 Thread 0x0a38a400 Threw 0x6ebb5740 at /build/buildd/openjdk-7-7u25-2.3.12/build/openjdk/hotspot/src/share/vm/prims/jni.cpp:716
+
+Events (10 events):
+Event: 0.310 Thread 0x0a38a400 Thread added: 0x0a38a400
+Event: 0.313 Thread 0x0a38a400 Thread exited: 0x0a38a400
+Event: 0.318 Thread 0x0a38a400 Thread added: 0x0a38a400
+Event: 0.322 Thread 0x0a38a400 Thread exited: 0x0a38a400
+Event: 4.082 Executing VM operation: EnableBiasedLocking
+Event: 4.082 Executing VM operation: EnableBiasedLocking done
+Event: 6826.489 loading class 0x93fc2740
+Event: 6826.494 loading class 0x93fc2740 done
+Event: 6826.494 Thread 0xae02f000 Thread added: 0xae02f000
+Event: 6830.514 Executing VM operation: Exit
+
+
+Dynamic libraries:
+08048000-08049000 r-xp 00000000 07:01 18232      /usr/lib/libreoffice/program/soffice.bin
+08049000-0804a000 r--p 00000000 07:01 18232      /usr/lib/libreoffice/program/soffice.bin
+0804a000-0804b000 rw-p 00001000 07:01 18232      /usr/lib/libreoffice/program/soffice.bin
+08b50000-0a5b5000 rw-p 00000000 00:00 0          [heap]
+6e980000-6eed0000 rw-p 00000000 00:00 0 
+6eed0000-79420000 rw-p 00000000 00:00 0 
+79420000-79ed0000 rw-p 00000000 00:00 0 
+79ed0000-8e980000 rw-p 00000000 00:00 0 
+8e980000-8f580000 rw-p 00000000 00:00 0 
+8f580000-92980000 rw-p 00000000 00:00 0 
+92980000-92f8d000 r--p 00001000 00:10 56262      /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/client/classes.jsa
+92f8d000-93380000 rw-p 00000000 00:00 0 
+93380000-93ae7000 rw-p 0060e000 00:10 56262      /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/client/classes.jsa
+93ae7000-93f80000 rw-p 00000000 00:00 0 
+93f80000-9429a000 rw-p 00d75000 00:10 56262      /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/client/classes.jsa
+9429a000-94380000 rw-p 00000000 00:00 0 
+94380000-94389000 r-xp 0108f000 00:10 56262      /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/client/classes.jsa
+94389000-94780000 rw-p 00000000 00:00 0 
+97dd0000-97ffc000 rw-p 00000000 00:00 0 
+97ffc000-97fff000 ---p 00000000 00:00 0 
+97fff000-9804d000 rw-p 00000000 00:00 0          [stack:11695]
+9810c000-981cb000 rw-p 00000000 00:00 0 
+981cb000-9835e000 r-xp 00000000 07:01 18055      /usr/lib/libreoffice/program/libmswordlo.so
+9835e000-98362000 r--p 00192000 07:01 18055      /usr/lib/libreoffice/program/libmswordlo.so
+98362000-98366000 rw-p 00196000 07:01 18055      /usr/lib/libreoffice/program/libmswordlo.so
+98366000-9dacd000 r--p 00000000 07:01 108465     /usr/share/icons/gnome/icon-theme.cache
+9dacd000-9db2d000 rw-s 00000000 00:04 2719753    /SYSV00000000 (deleted)
+9db2d000-9db66000 r-xp 00000000 07:01 16253      /usr/lib/i386-linux-gnu/libcroco-0.6.so.3.0.1
+9db66000-9db68000 r--p 00038000 07:01 16253      /usr/lib/i386-linux-gnu/libcroco-0.6.so.3.0.1
+9db68000-9db69000 rw-p 0003a000 07:01 16253      /usr/lib/i386-linux-gnu/libcroco-0.6.so.3.0.1
+9db69000-9db9f000 r-xp 00000000 07:01 16913      /usr/lib/i386-linux-gnu/librsvg-2.so.2.36.4
+9db9f000-9dba0000 r--p 00035000 07:01 16913      /usr/lib/i386-linux-gnu/librsvg-2.so.2.36.4
+9dba0000-9dba1000 rw-p 00036000 07:01 16913      /usr/lib/i386-linux-gnu/librsvg-2.so.2.36.4
+9dbb1000-9dbb3000 rw-p 00000000 00:00 0 
+9dbb3000-9dbb4000 r-xp 00000000 07:01 15663      /usr/lib/i386-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.so
+9dbb4000-9dbb5000 r--p 00001000 07:01 15663      /usr/lib/i386-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.so
+9dbb5000-9dbb6000 rw-p 00002000 07:01 15663      /usr/lib/i386-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-svg.so
+9dbb6000-9dbc4000 r--p 00000000 07:01 47742      /usr/share/fonts/opentype/cantarell/Cantarell-Bold.otf
+9dbc4000-9dbc5000 ---p 00000000 00:00 0 
+9dbc5000-9e3c5000 rw-p 00000000 00:00 0 
+9e3c5000-a0839000 r--p 00000000 00:10 64278      /usr/share/icons/hicolor/icon-theme.cache
+a0839000-a5fa0000 r--p 00000000 07:01 108465     /usr/share/icons/gnome/icon-theme.cache
+a5fa0000-a5fb9000 r-xp 00000000 07:01 15740      /usr/lib/i386-linux-gnu/gio/modules/libgioremote-volume-monitor.so
+a5fb9000-a5fba000 ---p 00019000 07:01 15740      /usr/lib/i386-linux-gnu/gio/modules/libgioremote-volume-monitor.so
+a5fba000-a5fbb000 r--p 00019000 07:01 15740      /usr/lib/i386-linux-gnu/gio/modules/libgioremote-volume-monitor.so
+a5fbb000-a5fbc000 rw-p 0001a000 07:01 15740      /usr/lib/i386-linux-gnu/gio/modules/libgioremote-volume-monitor.so
+a5fbc000-a5fbf000 r-xp 00000000 07:01 18013      /usr/lib/libreoffice/program/libfpickerlo.so
+a5fbf000-a5fc0000 r--p 00002000 07:01 18013      /usr/lib/libreoffice/program/libfpickerlo.so
+a5fc0000-a5fc1000 rw-p 00003000 07:01 18013      /usr/lib/libreoffice/program/libfpickerlo.so
+a5fc1000-a5fdd000 r-xp 00000000 07:01 17974      /usr/lib/libreoffice/program/libbasprovlo.so
+a5fdd000-a5fde000 r--p 0001c000 07:01 17974      /usr/lib/libreoffice/program/libbasprovlo.so
+a5fde000-a5fdf000 rw-p 0001d000 07:01 17974      /usr/lib/libreoffice/program/libbasprovlo.so
+a5fdf000-a5fe0000 r-xs 00000000 00:10 158936     /home/ubuntu-gnome/.execoooc5utmK (deleted)
+a5fe0000-a5fe9000 r--s 000bc000 00:10 55646      /usr/lib/jvm/java-7-openjdk-common/jre/lib/resources.jar
+a5fe9000-a6005000 r-xp 00000000 07:01 28152      /usr/lib/ure/lib/libjava_uno.so
+a6005000-a6006000 r--p 0001b000 07:01 28152      /usr/lib/ure/lib/libjava_uno.so
+a6006000-a6007000 rw-p 0001c000 07:01 28152      /usr/lib/ure/lib/libjava_uno.so
+a6007000-a6011000 r--s 00034000 07:01 110413     /usr/share/java/ridl.jar
+a6011000-a6012000 ---p 00000000 00:00 0 
+a6012000-a6092000 rw-p 00000000 00:00 0 
+a6092000-a6095000 ---p 00000000 00:00 0 
+a6095000-a60e3000 rw-p 00000000 00:00 0          [stack:9259]
+a60e3000-a60e6000 ---p 00000000 00:00 0 
+a60e6000-a6164000 rw-p 00000000 00:00 0          [stack:9258]
+a6164000-a6167000 ---p 00000000 00:00 0 
+a6167000-a61b5000 rw-p 00000000 00:00 0          [stack:9257]
+a61b5000-a61b8000 ---p 00000000 00:00 0 
+a61b8000-a6206000 rw-p 00000000 00:00 0          [stack:9256]
+a6206000-a6209000 ---p 00000000 00:00 0 
+a6209000-a6257000 rw-p 00000000 00:00 0          [stack:9255]
+a6257000-a6258000 ---p 00000000 00:00 0 
+a6258000-a62d8000 rw-p 00000000 00:00 0          [stack:9254]
+a62d8000-a6485000 r--s 01cec000 00:10 54824      /usr/lib/jvm/java-7-openjdk-i386/jre/lib/rt.jar
+a6485000-a6493000 rw-p 00000000 00:00 0 
+a6493000-a64ad000 rw-p 00000000 00:00 0 
+a64ad000-a64b3000 rw-p 00000000 00:00 0 
+a64b3000-a6558000 rw-p 00000000 00:00 0 
+a6558000-a655b000 rw-p 00000000 00:00 0 
+a655b000-a65ad000 rw-p 00000000 00:00 0 
+a65ad000-a65b3000 rw-p 00000000 00:00 0 
+a65b3000-a6658000 rw-p 00000000 00:00 0 
+a6658000-a665e000 rw-p 00000000 00:00 0 
+a665e000-a6678000 rw-p 00000000 00:00 0 
+a6678000-a6687000 rw-p 00000000 00:00 0 
+a6687000-a6704000 rw-p 00000000 00:00 0 
+a6704000-a67ac000 rwxp 00000000 00:00 0 
+a67ac000-a8704000 rw-p 00000000 00:00 0 
+a8704000-a870c000 r-xp 00000000 00:10 55531      /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libzip.so
+a870c000-a870d000 r--p 00007000 00:10 55531      /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libzip.so
+a870d000-a870e000 rw-p 00008000 00:10 55531      /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libzip.so
+a870e000-a8716000 rw-s 00000000 00:14 157915     /tmp/hsperfdata_ubuntu-gnome/9041 (deleted)
+a8716000-a873d000 r-xp 00000000 00:10 54843      /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libjava.so
+a873d000-a873e000 r--p 00026000 00:10 54843      /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libjava.so
+a873e000-a873f000 rw-p 00027000 00:10 54843      /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libjava.so
+a873f000-a874d000 r-xp 00000000 00:10 55565      /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libverify.so
+a874d000-a874e000 r--p 0000d000 00:10 55565      /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libverify.so
+a874e000-a874f000 rw-p 0000e000 00:10 55565      /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/libverify.so
+a874f000-a8d24000 r-xp 00000000 00:10 55561      /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/client/libjvm.so
+a8d24000-a8d39000 r--p 005d4000 00:10 55561      /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/client/libjvm.so
+a8d39000-a8d48000 rw-p 005e9000 00:10 55561      /usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/client/libjvm.so
+a8d48000-a9161000 rw-p 00000000 00:00 0 
+a9161000-a9162000 rw-s 00000000 00:10 158936     /home/ubuntu-gnome/.execoooc5utmK (deleted)
+a9162000-a9163000 r-xs 00000000 00:10 158934     /home/ubuntu-gnome/.execoooA2hflS (deleted)
+a9163000-a9164000 rw-s 00000000 00:10 158934     /home/ubuntu-gnome/.execoooA2hflS (deleted)
+a9164000-a9167000 r--s 0001b000 07:01 110411     /usr/share/java/jurt.jar
+a9167000-a9169000 r--s 00000000 07:01 110414     /usr/share/java/unoloader.jar
+a9169000-a916c000 r--s 0000f000 00:10 55640      /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/pulse-java.jar
+a916c000-a916f000 r--s 00032000 00:10 55085      /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/sunjce_provider.jar
+a916f000-a9173000 r--s 00085000 00:10 55087      /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/localedata.jar
+a9173000-a9199000 r-xp 00000000 07:01 28154      /usr/lib/ure/lib/libjavavmlo.so
+a9199000-a919a000 ---p 00026000 07:01 28154      /usr/lib/ure/lib/libjavavmlo.so
+a919a000-a919b000 r--p 00026000 07:01 28154      /usr/lib/ure/lib/libjavavmlo.so
+a919b000-a919c000 rw-p 00027000 07:01 28154      /usr/lib/ure/lib/libjavavmlo.so
+a919c000-a91e9000 r-xp 00000000 07:01 18114      /usr/lib/libreoffice/program/libucptdoc1lo.so
+a91e9000-a91eb000 r--p 0004c000 07:01 18114      /usr/lib/libreoffice/program/libucptdoc1lo.so
+a91eb000-a91ec000 rw-p 0004e000 07:01 18114      /usr/lib/libreoffice/program/libucptdoc1lo.so
+a91ec000-a951a000 r-xp 00000000 07:01 17985      /usr/lib/libreoffice/program/libcuilo.so
+a951a000-a9538000 r--p 0032e000 07:01 17985      /usr/lib/libreoffice/program/libcuilo.so
+a9538000-a953c000 rw-p 0034c000 07:01 17985      /usr/lib/libreoffice/program/libcuilo.so
+a953c000-a953d000 rw-p 00000000 00:00 0 
+a953d000-a9638000 r-xp 00000000 07:01 18044      /usr/lib/libreoffice/program/liblocaledata_euro.so
+a9638000-a9639000 r--p 000fa000 07:01 18044      /usr/lib/libreoffice/program/liblocaledata_euro.so
+a9639000-a9667000 rw-p 000fb000 07:01 18044      /usr/lib/libreoffice/program/liblocaledata_euro.so
+a9667000-a9767000 rw-s 00000000 00:04 2195460    /SYSV00000000 (deleted)
+a9767000-a97e3000 r-xp 00000000 07:01 16431      /usr/lib/i386-linux-gnu/libgmp.so.10.1.2
+a97e3000-a97e4000 ---p 0007c000 07:01 16431      /usr/lib/i386-linux-gnu/libgmp.so.10.1.2
+a97e4000-a97e5000 r--p 0007c000 07:01 16431      /usr/lib/i386-linux-gnu/libgmp.so.10.1.2
+a97e5000-a97ec000 rw-p 0007d000 07:01 16431      /usr/lib/i386-linux-gnu/libgmp.so.10.1.2
+a97ec000-a981e000 r-xp 00000000 07:01 16751      /usr/lib/i386-linux-gnu/libmhash.so.2.0.1
+a981e000-a981f000 r--p 00031000 07:01 16751      /usr/lib/i386-linux-gnu/libmhash.so.2.0.1
+a981f000-a9820000 rw-p 00032000 07:01 16751      /usr/lib/i386-linux-gnu/libmhash.so.2.0.1
+a9820000-a9828000 r-xp 00000000 07:01 17114      /usr/lib/i386-linux-gnu/libyajl.so.2.0.4
+a9828000-a9829000 r--p 00007000 07:01 17114      /usr/lib/i386-linux-gnu/libyajl.so.2.0.4
+a9829000-a982a000 rw-p 00008000 07:01 17114      /usr/lib/i386-linux-gnu/libyajl.so.2.0.4
+a982a000-a99aa000 r-xp 00000000 07:01 16275      /usr/lib/i386-linux-gnu/libdb-5.1.so
+a99aa000-a99ae000 r--p 0017f000 07:01 16275      /usr/lib/i386-linux-gnu/libdb-5.1.so
+a99ae000-a99af000 rw-p 00183000 07:01 16275      /usr/lib/i386-linux-gnu/libdb-5.1.so
+a99af000-a9a18000 r-xp 00000000 07:01 17907      /usr/lib/librasqal.so.3.0.0
+a9a18000-a9a1a000 r--p 00068000 07:01 17907      /usr/lib/librasqal.so.3.0.0
+a9a1a000-a9a1b000 rw-p 0006a000 07:01 17907      /usr/lib/librasqal.so.3.0.0
+a9a1b000-a9a74000 r-xp 00000000 07:01 17905      /usr/lib/libraptor2.so.0.0.0
+a9a74000-a9a76000 r--p 00059000 07:01 17905      /usr/lib/libraptor2.so.0.0.0
+a9a76000-a9a77000 rw-p 0005b000 07:01 17905      /usr/lib/libraptor2.so.0.0.0
+a9a77000-a9ab0000 r-xp 00000000 07:01 17909      /usr/lib/librdf.so.0.0.0
+a9ab0000-a9ab1000 r--p 00038000 07:01 17909      /usr/lib/librdf.so.0.0.0
+a9ab1000-a9ab2000 rw-p 00039000 07:01 17909      /usr/lib/librdf.so.0.0.0
+a9ab2000-a9ac1000 r-xp 00000000 07:01 28153      /usr/lib/ure/lib/libjavaloaderlo.so
+a9ac1000-a9ac2000 ---p 0000f000 07:01 28153      /usr/lib/ure/lib/libjavaloaderlo.so
+a9ac2000-a9ac3000 r--p 0000f000 07:01 28153      /usr/lib/ure/lib/libjavaloaderlo.so
+a9ac3000-a9ac4000 rw-p 00010000 07:01 28153      /usr/lib/ure/lib/libjavaloaderlo.so
+a9ac4000-a9af0000 r-xp 00000000 07:01 18116      /usr/lib/libreoffice/program/libunordflo.so
+a9af0000-a9af2000 r--p 0002b000 07:01 18116      /usr/lib/libreoffice/program/libunordflo.so
+a9af2000-a9af3000 rw-p 0002d000 07:01 18116      /usr/lib/libreoffice/program/libunordflo.so
+a9af3000-a9b27000 r-xp 00000000 07:01 18113      /usr/lib/libreoffice/program/libucppkg1.so
+a9b27000-a9b28000 r--p 00033000 07:01 18113      /usr/lib/libreoffice/program/libucppkg1.so
+a9b28000-a9b29000 rw-p 00034000 07:01 18113      /usr/lib/libreoffice/program/libucppkg1.so
+a9b29000-a9b4e000 r-xp 00000000 07:01 18093      /usr/lib/libreoffice/program/libstringresourcelo.so
+a9b4e000-a9b50000 r--p 00024000 07:01 18093      /usr/lib/libreoffice/program/libstringresourcelo.so
+a9b50000-a9b51000 rw-p 00026000 07:01 18093      /usr/lib/libreoffice/program/libstringresourcelo.so
+a9b51000-a9c7a000 r-xp 00000000 07:01 17972      /usr/lib/libreoffice/program/libbasctllo.so
+a9c7a000-a9c83000 r--p 00128000 07:01 17972      /usr/lib/libreoffice/program/libbasctllo.so
+a9c83000-a9c86000 rw-p 00131000 07:01 17972      /usr/lib/libreoffice/program/libbasctllo.so
+a9c86000-a9c87000 rw-p 00000000 00:00 0 
+a9c87000-a9ca9000 r--s 00000000 07:01 47795      /usr/share/fonts/truetype/liberation/LiberationSans-BoldItalic.ttf
+a9ca9000-a9ccc000 r--s 00000000 07:01 47797      /usr/share/fonts/truetype/liberation/LiberationSans-Regular.ttf
+a9ccc000-a9cee000 r--s 00000000 07:01 47794      /usr/share/fonts/truetype/liberation/LiberationSans-Bold.ttf
+a9cee000-a9d40000 r--s 00000000 07:01 47751      /usr/share/fonts/truetype/dejavu/DejaVuSansMono.ttf
+a9d40000-a9d41000 ---p 00000000 00:00 0 
+a9d41000-aa541000 rw-p 00000000 00:00 0 
+aa541000-aa552000 r-xp 00000000 07:01 3811       /lib/i386-linux-gnu/libudev.so.1.3.5
+aa552000-aa553000 r--p 00010000 07:01 3811       /lib/i386-linux-gnu/libudev.so.1.3.5
+aa553000-aa554000 rw-p 00011000 07:01 3811       /lib/i386-linux-gnu/libudev.so.1.3.5
+aa554000-aa587000 r-xp 00000000 07:01 18077      /usr/lib/libreoffice/program/libscriptframe.so
+aa587000-aa589000 r--p 00032000 07:01 18077      /usr/lib/libreoffice/program/libscriptframe.so
+aa589000-aa58a000 rw-p 00034000 07:01 18077      /usr/lib/libreoffice/program/libscriptframe.so
+aa58a000-aa59a000 rw-p 00000000 00:00 0 
+aa59a000-aa5cd000 r--s 00000000 07:01 47922      /usr/share/fonts/truetype/ubuntu-font-family/UbuntuMono-R.ttf
+aa5cd000-aa601000 r--s 00000000 07:01 47923      /usr/share/fonts/truetype/ubuntu-font-family/UbuntuMono-RI.ttf
+aa601000-aa650000 r-xp 00000000 07:01 18131      /usr/lib/libreoffice/program/libxmlsecurity.so
+aa650000-aa653000 r--p 0004f000 07:01 18131      /usr/lib/libreoffice/program/libxmlsecurity.so
+aa653000-aa654000 rw-p 00052000 07:01 18131      /usr/lib/libreoffice/program/libxmlsecurity.so
+aa654000-aa725000 r-xp 00000000 07:01 18094      /usr/lib/libreoffice/program/libsvgfilterlo.so
+aa725000-aa729000 r--p 000d0000 07:01 18094      /usr/lib/libreoffice/program/libsvgfilterlo.so
+aa729000-aa72a000 rw-p 000d4000 07:01 18094      /usr/lib/libreoffice/program/libsvgfilterlo.so
+aa72a000-aa76d000 r-xp 00000000 07:01 18132      /usr/lib/libreoffice/program/libxoflo.so
+aa76d000-aa76e000 ---p 00043000 07:01 18132      /usr/lib/libreoffice/program/libxoflo.so
+aa76e000-aa770000 r--p 00043000 07:01 18132      /usr/lib/libreoffice/program/libxoflo.so
+aa770000-aa77b000 rw-p 00045000 07:01 18132      /usr/lib/libreoffice/program/libxoflo.so
+aa77b000-aa7f1000 r-xp 00000000 07:01 18022      /usr/lib/libreoffice/program/libhwplo.so
+aa7f1000-aa7f3000 r--p 00076000 07:01 18022      /usr/lib/libreoffice/program/libhwplo.so
+aa7f3000-aa7f5000 rw-p 00078000 07:01 18022      /usr/lib/libreoffice/program/libhwplo.so
+aa7f5000-aa7f6000 rw-p 00000000 00:00 0 
+aa7f6000-aa8e6000 r-xp 00000000 07:01 18048      /usr/lib/libreoffice/program/liblwpftlo.so
+aa8e6000-aa8ee000 r--p 000ef000 07:01 18048      /usr/lib/libreoffice/program/liblwpftlo.so
+aa8ee000-aa8ef000 rw-p 000f7000 07:01 18048      /usr/lib/libreoffice/program/liblwpftlo.so
+aa8ef000-aa996000 r-xp 00000000 07:01 20712      /usr/lib/libvisio-0.0.so.0.0.31
+aa996000-aa998000 r--p 000a7000 07:01 20712      /usr/lib/libvisio-0.0.so.0.0.31
+aa998000-aa999000 rw-p 000a9000 07:01 20712      /usr/lib/libvisio-0.0.so.0.0.31
+aa999000-aaa16000 r-xp 00000000 07:01 17857      /usr/lib/libmspub-0.0.so.0.0.6
+aaa16000-aaa17000 r--p 0007d000 07:01 17857      /usr/lib/libmspub-0.0.so.0.0.6
+aaa17000-aaa18000 rw-p 0007e000 07:01 17857      /usr/lib/libmspub-0.0.so.0.0.6
+aaa18000-aaa1a000 rw-p 00000000 00:00 0 
+aaa1a000-aaaf2000 r-xp 00000000 07:01 17709      /usr/lib/libcdr-0.0.so.0.0.14
+aaaf2000-aaaf4000 r--p 000d7000 07:01 17709      /usr/lib/libcdr-0.0.so.0.0.14
+aaaf4000-aaaf5000 rw-p 000d9000 07:01 17709      /usr/lib/libcdr-0.0.so.0.0.14
+aaaf5000-aab49000 r-xp 00000000 07:01 18126      /usr/lib/libreoffice/program/libwpftdrawlo.so
+aab49000-aab4a000 ---p 00054000 07:01 18126      /usr/lib/libreoffice/program/libwpftdrawlo.so
+aab4a000-aab4b000 r--p 00054000 07:01 18126      /usr/lib/libreoffice/program/libwpftdrawlo.so
+aab4b000-aab4c000 rw-p 00055000 07:01 18126      /usr/lib/libreoffice/program/libwpftdrawlo.so
+aab4c000-aab6a000 r-xp 00000000 07:01 18100      /usr/lib/libreoffice/program/libt602filterlo.so
+aab6a000-aab6b000 ---p 0001e000 07:01 18100      /usr/lib/libreoffice/program/libt602filterlo.so
+aab6b000-aab6c000 r--p 0001e000 07:01 18100      /usr/lib/libreoffice/program/libt602filterlo.so
+aab6c000-aab6d000 rw-p 0001f000 07:01 18100      /usr/lib/libreoffice/program/libt602filterlo.so
+aab6d000-aab78000 r-xp 00000000 07:01 16711      /usr/lib/i386-linux-gnu/libjbig.so.0.0.0
+aab78000-aab79000 r--p 0000a000 07:01 16711      /usr/lib/i386-linux-gnu/libjbig.so.0.0.0
+aab79000-aab7c000 rw-p 0000b000 07:01 16711      /usr/lib/i386-linux-gnu/libjbig.so.0.0.0
+aab7c000-aabea000 r-xp 00000000 07:01 16998      /usr/lib/i386-linux-gnu/libtiff.so.5.1.0
+aabea000-aabeb000 r--p 0006e000 07:01 16998      /usr/lib/i386-linux-gnu/libtiff.so.5.1.0
+aabeb000-aabed000 rw-p 0006f000 07:01 16998      /usr/lib/i386-linux-gnu/libtiff.so.5.1.0
+aabed000-aaddc000 r-xp 00000000 07:01 16858      /usr/lib/i386-linux-gnu/libpoppler.so.43.0.0
+aaddc000-aadea000 r--p 001ee000 07:01 16858      /usr/lib/i386-linux-gnu/libpoppler.so.43.0.0
+aadea000-aae01000 rw-p 001fc000 07:01 16858      /usr/lib/i386-linux-gnu/libpoppler.so.43.0.0
+aae01000-aae07000 r-xp 00000000 07:01 28162      /usr/lib/ure/lib/libproxyfaclo.so
+aae07000-aae08000 r--p 00005000 07:01 28162      /usr/lib/ure/lib/libproxyfaclo.so
+aae08000-aae09000 rw-p 00006000 07:01 28162      /usr/lib/ure/lib/libproxyfaclo.so
+aae09000-aae10000 r-xp 00000000 07:01 18103      /usr/lib/libreoffice/program/libtextfdlo.so
+aae10000-aae11000 ---p 00007000 07:01 18103      /usr/lib/libreoffice/program/libtextfdlo.so
+aae11000-aae12000 r--p 00007000 07:01 18103      /usr/lib/libreoffice/program/libtextfdlo.so
+aae12000-aae13000 rw-p 00008000 07:01 18103      /usr/lib/libreoffice/program/libtextfdlo.so
+aae13000-aae90000 r-xp 00000000 07:01 18063      /usr/lib/libreoffice/program/libpdfimportlo.so
+aae90000-aae93000 r--p 0007c000 07:01 18063      /usr/lib/libreoffice/program/libpdfimportlo.so
+aae93000-aae94000 rw-p 0007f000 07:01 18063      /usr/lib/libreoffice/program/libpdfimportlo.so
+aae94000-aae9f000 r-xp 00000000 07:01 18130      /usr/lib/libreoffice/program/libxmlfdlo.so
+aae9f000-aaea0000 r--p 0000a000 07:01 18130      /usr/lib/libreoffice/program/libxmlfdlo.so
+aaea0000-aaea1000 rw-p 0000b000 07:01 18130      /usr/lib/libreoffice/program/libxmlfdlo.so
+aaea1000-aaeac000 r-xp 00000000 07:01 18086      /usr/lib/libreoffice/program/libsmdlo.so
+aaeac000-aaead000 r--p 0000a000 07:01 18086      /usr/lib/libreoffice/program/libsmdlo.so
+aaead000-aaeae000 rw-p 0000b000 07:01 18086      /usr/lib/libreoffice/program/libsmdlo.so
+aaeae000-aaebb000 r-xp 00000000 07:01 18080      /usr/lib/libreoffice/program/libsddlo.so
+aaebb000-aaebc000 r--p 0000c000 07:01 18080      /usr/lib/libreoffice/program/libsddlo.so
+aaebc000-aaebd000 rw-p 0000d000 07:01 18080      /usr/lib/libreoffice/program/libsddlo.so
+aaebd000-ab051000 r-xp 00000000 07:01 3677       /lib/i386-linux-gnu/libcrypto.so.1.0.0
+ab051000-ab060000 r--p 00194000 07:01 3677       /lib/i386-linux-gnu/libcrypto.so.1.0.0
+ab060000-ab067000 rw-p 001a3000 07:01 3677       /lib/i386-linux-gnu/libcrypto.so.1.0.0
+ab067000-ab06a000 rw-p 00000000 00:00 0 
+ab06a000-ab0bb000 r-xp 00000000 07:01 3799       /lib/i386-linux-gnu/libssl.so.1.0.0
+ab0bb000-ab0bd000 r--p 00050000 07:01 3799       /lib/i386-linux-gnu/libssl.so.1.0.0
+ab0bd000-ab0c1000 rw-p 00052000 07:01 3799       /lib/i386-linux-gnu/libssl.so.1.0.0
+ab0c1000-ab4a1000 r-xp 00000000 07:01 18059      /usr/lib/libreoffice/program/libooxlo.so
+ab4a1000-ab4bb000 r--p 003df000 07:01 18059      /usr/lib/libreoffice/program/libooxlo.so
+ab4bb000-ab634000 rw-p 003f9000 07:01 18059      /usr/lib/libreoffice/program/libooxlo.so
+ab634000-ab6e0000 r-xp 00000000 07:01 20728      /usr/lib/libwps-0.2.so.2.0.9
+ab6e0000-ab6e1000 r--p 000ac000 07:01 20728      /usr/lib/libwps-0.2.so.2.0.9
+ab6e1000-ab6e2000 rw-p 000ad000 07:01 20728      /usr/lib/libwps-0.2.so.2.0.9
+ab6e2000-ab709000 r-xp 00000000 07:01 20726      /usr/lib/libwpg-0.2.so.2.0.1
+ab709000-ab70a000 ---p 00027000 07:01 20726      /usr/lib/libwpg-0.2.so.2.0.1
+ab70a000-ab70b000 r--p 00027000 07:01 20726      /usr/lib/libwpg-0.2.so.2.0.1
+ab70b000-ab70c000 rw-p 00028000 07:01 20726      /usr/lib/libwpg-0.2.so.2.0.1
+ab70c000-ab71f000 r-xp 00000000 07:01 20724      /usr/lib/libwpd-stream-0.9.so.9.0.9
+ab71f000-ab720000 r--p 00012000 07:01 20724      /usr/lib/libwpd-stream-0.9.so.9.0.9
+ab720000-ab721000 rw-p 00013000 07:01 20724      /usr/lib/libwpd-stream-0.9.so.9.0.9
+ab721000-ab7db000 r-xp 00000000 07:01 20722      /usr/lib/libwpd-0.9.so.9.0.9
+ab7db000-ab7df000 r--p 000b9000 07:01 20722      /usr/lib/libwpd-0.9.so.9.0.9
+ab7df000-ab7e0000 rw-p 000bd000 07:01 20722      /usr/lib/libwpd-0.9.so.9.0.9
+ab7e0000-ac058000 r-xp 00000000 07:01 18127      /usr/lib/libreoffice/program/libwpftwriterlo.so
+ac058000-ac05f000 r--p 00877000 07:01 18127      /usr/lib/libreoffice/program/libwpftwriterlo.so
+ac05f000-ac060000 rw-p 0087e000 07:01 18127      /usr/lib/libreoffice/program/libwpftwriterlo.so
+ac060000-ac061000 rw-p 00000000 00:00 0 
+ac061000-ac0d9000 r-xp 00000000 07:01 18016      /usr/lib/libreoffice/program/libfwllo.so
+ac0d9000-ac0dc000 r--p 00078000 07:01 18016      /usr/lib/libreoffice/program/libfwllo.so
+ac0dc000-ac0dd000 rw-p 0007b000 07:01 18016      /usr/lib/libreoffice/program/libfwllo.so
+ac0dd000-ac0ed000 r-xp 00000000 07:01 17178      /usr/lib/i386-linux-gnu/pkcs11/gnome-keyring-pkcs11.so
+ac0ed000-ac0ee000 ---p 00010000 07:01 17178      /usr/lib/i386-linux-gnu/pkcs11/gnome-keyring-pkcs11.so
+ac0ee000-ac0ef000 r--p 00010000 07:01 17178      /usr/lib/i386-linux-gnu/pkcs11/gnome-keyring-pkcs11.so
+ac0ef000-ac0f0000 rw-p 00011000 07:01 17178      /usr/lib/i386-linux-gnu/pkcs11/gnome-keyring-pkcs11.so
+ac0f0000-ac112000 r-xp 00000000 07:01 17179      /usr/lib/i386-linux-gnu/pkcs11/p11-kit-trust.so
+ac112000-ac115000 r--p 00021000 07:01 17179      /usr/lib/i386-linux-gnu/pkcs11/p11-kit-trust.so
+ac115000-ac116000 rw-p 00024000 07:01 17179      /usr/lib/i386-linux-gnu/pkcs11/p11-kit-trust.so
+ac116000-ac117000 ---p 00000000 00:00 0 
+ac117000-ac917000 rw-p 00000000 00:00 0 
+ac917000-ac928000 r-xp 00000000 07:01 18041      /usr/lib/libreoffice/program/liblnthlo.so
+ac928000-ac929000 r--p 00010000 07:01 18041      /usr/lib/libreoffice/program/liblnthlo.so
+ac929000-ac92a000 rw-p 00011000 07:01 18041      /usr/lib/libreoffice/program/liblnthlo.so
+ac92a000-ac92f000 r-xp 00000000 07:01 17814      /usr/lib/libhyphen.so.0.2.1
+ac92f000-ac930000 r--p 00004000 07:01 17814      /usr/lib/libhyphen.so.0.2.1
+ac930000-ac931000 rw-p 00005000 07:01 17814      /usr/lib/libhyphen.so.0.2.1
+ac931000-ac932000 r--s 00001000 07:01 110409     /usr/share/java/java_uno.jar
+ac932000-ac941000 r-xp 00000000 07:01 18073      /usr/lib/libreoffice/program/libscdlo.so
+ac941000-ac942000 r--p 0000e000 07:01 18073      /usr/lib/libreoffice/program/libscdlo.so
+ac942000-ac943000 rw-p 0000f000 07:01 18073      /usr/lib/libreoffice/program/libscdlo.so
+ac943000-ac952000 r-xp 00000000 07:01 18023      /usr/lib/libreoffice/program/libhyphenlo.so
+ac952000-ac953000 r--p 0000f000 07:01 18023      /usr/lib/libreoffice/program/libhyphenlo.so
+ac953000-ac954000 rw-p 00010000 07:01 18023      /usr/lib/libreoffice/program/libhyphenlo.so
+ac954000-ac963000 r-xp 00000000 07:01 18090      /usr/lib/libreoffice/program/libspelllo.so
+ac963000-ac964000 r--p 0000e000 07:01 18090      /usr/lib/libreoffice/program/libspelllo.so
+ac964000-ac965000 rw-p 0000f000 07:01 18090      /usr/lib/libreoffice/program/libspelllo.so
+ac965000-ac973000 r--s 00000000 07:01 47742      /usr/share/fonts/opentype/cantarell/Cantarell-Bold.otf
+ac973000-ac975000 r--s 00006000 00:10 54440      /usr/share/java/java-atk-wrapper.jar
+ac975000-ac985000 rw-p 00000000 00:00 0 
+ac985000-ac98c000 r--s 00000000 07:01 15639      /usr/lib/i386-linux-gnu/gconv/gconv-modules.cache
+ac98c000-ac9be000 r-xp 00000000 07:01 16049      /usr/lib/i386-linux-gnu/gvfs/libgvfscommon.so
+ac9be000-ac9c0000 r--p 00032000 07:01 16049      /usr/lib/i386-linux-gnu/gvfs/libgvfscommon.so
+ac9c0000-ac9c1000 rw-p 00034000 07:01 16049      /usr/lib/i386-linux-gnu/gvfs/libgvfscommon.so
+ac9c1000-ac9f1000 r-xp 00000000 07:01 15741      /usr/lib/i386-linux-gnu/gio/modules/libgvfsdbus.so
+ac9f1000-ac9f2000 r--p 0002f000 07:01 15741      /usr/lib/i386-linux-gnu/gio/modules/libgvfsdbus.so
+ac9f2000-ac9f3000 rw-p 00030000 07:01 15741      /usr/lib/i386-linux-gnu/gio/modules/libgvfsdbus.so
+ac9f3000-aca1a000 r-xp 00000000 07:01 28148      /usr/lib/ure/lib/libintrospectionlo.so
+aca1a000-aca1b000 ---p 00027000 07:01 28148      /usr/lib/ure/lib/libintrospectionlo.so
+aca1b000-aca1c000 r--p 00027000 07:01 28148      /usr/lib/ure/lib/libintrospectionlo.so
+aca1c000-aca1d000 rw-p 00028000 07:01 28148      /usr/lib/ure/lib/libintrospectionlo.so
+aca1d000-aca41000 r-xp 00000000 07:01 18111      /usr/lib/libreoffice/program/libucpgio1lo.so
+aca41000-aca42000 r--p 00023000 07:01 18111      /usr/lib/libreoffice/program/libucpgio1lo.so
+aca42000-aca43000 rw-p 00024000 07:01 18111      /usr/lib/libreoffice/program/libucpgio1lo.so
+aca43000-aca62000 r-xp 00000000 07:01 18007      /usr/lib/libreoffice/program/libexpwraplo.so
+aca62000-aca63000 ---p 0001f000 07:01 18007      /usr/lib/libreoffice/program/libexpwraplo.so
+aca63000-aca64000 r--p 0001f000 07:01 18007      /usr/lib/libreoffice/program/libexpwraplo.so
+aca64000-aca65000 rw-p 00020000 07:01 18007      /usr/lib/libreoffice/program/libexpwraplo.so
+aca65000-aca8a000 r-xp 00000000 07:01 28163      /usr/lib/ure/lib/libreflectionlo.so
+aca8a000-aca8c000 r--p 00024000 07:01 28163      /usr/lib/ure/lib/libreflectionlo.so
+aca8c000-aca8d000 rw-p 00026000 07:01 28163      /usr/lib/ure/lib/libreflectionlo.so
+aca8d000-acb51000 r-xp 00000000 07:01 18119      /usr/lib/libreoffice/program/libvbahelperlo.so
+acb51000-acb59000 r--p 000c4000 07:01 18119      /usr/lib/libreoffice/program/libvbahelperlo.so
+acb59000-acb5a000 rw-p 000cc000 07:01 18119      /usr/lib/libreoffice/program/libvbahelperlo.so
+acb5a000-acb5b000 rw-p 00000000 00:00 0 
+acb5b000-ad785000 r-xp 00000000 07:01 18097      /usr/lib/libreoffice/program/libswlo.so
+ad785000-ad7c7000 r--p 00c29000 07:01 18097      /usr/lib/libreoffice/program/libswlo.so
+ad7c7000-ad7fb000 rw-p 00c6b000 07:01 18097      /usr/lib/libreoffice/program/libswlo.so
+ad7fb000-ad7ff000 rw-p 00000000 00:00 0 
+ad7ff000-ad800000 ---p 00000000 00:00 0 
+ad800000-ae000000 rw-p 00000000 00:00 0          [stack:9046]
+ae000000-ae081000 rw-p 00000000 00:00 0 
+ae081000-ae100000 ---p 00000000 00:00 0 
+ae100000-ae103000 r--s 0003c000 00:10 55089      /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/sunpkcs11.jar
+ae103000-ae120000 r--s 00000000 07:01 123851     /usr/share/mime/mime.cache
+ae120000-ae146000 r--s 00000000 07:01 47805      /usr/share/fonts/truetype/liberation/LiberationSerif-Regular.ttf
+ae146000-ae1a6000 rw-s 00000000 00:04 1900547    /SYSV00000000 (deleted)
+ae1a6000-ae1fc000 r-xp 00000000 07:01 18106      /usr/lib/libreoffice/program/libucpchelp1.so
+ae1fc000-ae1fe000 r--p 00055000 07:01 18106      /usr/lib/libreoffice/program/libucpchelp1.so
+ae1fe000-ae1ff000 rw-p 00057000 07:01 18106      /usr/lib/libreoffice/program/libucpchelp1.so
+ae1ff000-ae200000 ---p 00000000 00:00 0 
+ae200000-aea00000 rw-p 00000000 00:00 0          [stack:9045]
+aea00000-aea88000 rw-p 00000000 00:00 0 
+aea88000-aeb00000 ---p 00000000 00:00 0 
+aeb00000-aeb06000 rw-p 00000000 00:00 0 
+aeb06000-aeb0a000 r-xp 00000000 07:01 15659      /usr/lib/i386-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.so
+aeb0a000-aeb0b000 r--p 00003000 07:01 15659      /usr/lib/i386-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.so
+aeb0b000-aeb0c000 rw-p 00004000 07:01 15659      /usr/lib/i386-linux-gnu/gdk-pixbuf-2.0/2.10.0/loaders/libpixbufloader-png.so
+aeb0c000-aeb1c000 rw-p 00000000 00:00 0 
+aeb1c000-aeb2b000 r-xp 00000000 07:01 18096      /usr/lib/libreoffice/program/libswdlo.so
+aeb2b000-aeb2c000 r--p 0000e000 07:01 18096      /usr/lib/libreoffice/program/libswdlo.so
+aeb2c000-aeb2d000 rw-p 0000f000 07:01 18096      /usr/lib/libreoffice/program/libswdlo.so
+aeb2d000-aeb47000 r-xp 00000000 07:01 28166      /usr/lib/ure/lib/libstocserviceslo.so
+aeb47000-aeb49000 r--p 00019000 07:01 28166      /usr/lib/ure/lib/libstocserviceslo.so
+aeb49000-aeb4a000 rw-p 0001b000 07:01 28166      /usr/lib/ure/lib/libstocserviceslo.so
+aeb4a000-aebff000 r--s 00000000 07:01 47749      /usr/share/fonts/truetype/dejavu/DejaVuSans.ttf
+aebff000-aec00000 ---p 00000000 00:00 0 
+aec00000-af400000 rw-p 00000000 00:00 0          [stack:9044]
+af400000-af421000 rw-p 00000000 00:00 0 
+af421000-af500000 ---p 00000000 00:00 0 
+af500000-af502000 r--s 00012000 00:10 55083      /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/zipfs.jar
+af502000-af503000 r--s 00002000 00:10 55642      /usr/lib/jvm/java-7-openjdk-common/jre/lib/ext/dnsns.jar
+af503000-af504000 rw-p 00000000 00:00 0 
+af504000-af505000 r--s 00000000 00:10 144041     /home/ubuntu-gnome/.local/share/mime/mime.cache (deleted)
+af505000-af506000 ---p 00000000 00:00 0 
+af506000-af507000 r-xs 00000000 00:10 153859     /home/ubuntu-gnome/.execoooM0iCl0 (deleted)
+af507000-af508000 rw-s 00000000 00:10 153859     /home/ubuntu-gnome/.execoooM0iCl0 (deleted)
+af508000-af516000 r--s 00000000 07:01 47743      /usr/share/fonts/opentype/cantarell/Cantarell-Regular.otf
+af516000-af524000 r--p 00000000 07:01 47743      /usr/share/fonts/opentype/cantarell/Cantarell-Regular.otf
+af524000-af52f000 r-xp 00000000 07:01 18018      /usr/lib/libreoffice/program/libgconfbe1lo.so
+af52f000-af530000 ---p 0000b000 07:01 18018      /usr/lib/libreoffice/program/libgconfbe1lo.so
+af530000-af531000 r--p 0000b000 07:01 18018      /usr/lib/libreoffice/program/libgconfbe1lo.so
+af531000-af532000 rw-p 0000c000 07:01 18018      /usr/lib/libreoffice/program/libgconfbe1lo.so
+af532000-af533000 r--s 00000000 07:01 159467     /var/cache/fontconfig/c05880de57d1f5e948fdfacc138775d9-le32d4.cache-4
+af533000-af53b000 r--s 00000000 07:01 159460     /var/cache/fontconfig/945677eb7aeaf62f1d50efc3fb3ec7d8-le32d4.cache-4
+af53b000-af53d000 r--s 00000000 07:01 159462     /var/cache/fontconfig/99e8ed0e538f840c565b6ed5dad60d56-le32d4.cache-4
+af53d000-af543000 r--s 00000000 00:10 40530      /var/cache/fontconfig/a6d8cf8e4ec09cdbc8633c31745a07dd-le32d4.cache-4
+af543000-af547000 r--s 00000000 07:01 159444     /var/cache/fontconfig/2cd17615ca594fa2959ae173292e504c-le32d4.cache-4
+af547000-af548000 r--s 00000000 07:01 159477     /var/cache/fontconfig/e7071f4a29fa870f4323321c154eba04-le32d4.cache-4
+af548000-af549000 r--s 00000000 07:01 159441     /var/cache/fontconfig/0d8c3b2ac0904cb8a57a757ad11a4a08-le32d4.cache-4
+af549000-af54e000 r--s 00000000 07:01 159464     /var/cache/fontconfig/a755afe4a08bf5b97852ceb7400b47bc-le32d4.cache-4
+af54e000-af551000 r--s 00000000 07:01 159455     /var/cache/fontconfig/6d41288fd70b0be22e8c3a91e032eec0-le32d4.cache-4
+af551000-af560000 r--s 00000000 07:01 159439     /var/cache/fontconfig/04aabc0a78ac019cf9454389977116d2-le32d4.cache-4
+af560000-af561000 r--s 00000000 07:01 159443     /var/cache/fontconfig/1ac9eb803944fde146138c791f5cc56a-le32d4.cache-4
+af561000-af564000 r--s 00000000 07:01 159447     /var/cache/fontconfig/385c0604a188198f04d133e54aba7fe7-le32d4.cache-4
+af564000-af565000 r--s 00000000 07:01 159474     /var/cache/fontconfig/dc05db6664285cc2f12bf69c139ae4c3-le32d4.cache-4
+af565000-af567000 r--s 00000000 07:01 159457     /var/cache/fontconfig/767a8244fc0220cfb567a839d0392e0b-le32d4.cache-4
+af567000-af56a000 r--s 00000000 07:01 159459     /var/cache/fontconfig/8801497958630a81b71ace7c5f9b32a8-le32d4.cache-4
+af56a000-af56f000 r--s 00000000 07:01 159445     /var/cache/fontconfig/3047814df9a2f067bd2d96a2b9c36e5a-le32d4.cache-4
+af56f000-af573000 r--s 00000000 07:01 159465     /var/cache/fontconfig/b47c4e1ecd0709278f4910c18777a504-le32d4.cache-4
+af573000-af57a000 r--s 00000000 00:10 40493      /var/cache/fontconfig/52f7bdb7ce746bfd7eaa1985bd9cfa93-le32d4.cache-4
+af57a000-af58a000 r--s 00000000 07:01 159471     /var/cache/fontconfig/d52a8644073d54c13679302ca1180695-le32d4.cache-4
+af58a000-af591000 r--s 00000000 00:10 40487      /var/cache/fontconfig/3f7329c5293ffd510edef78f73874cfd-le32d4.cache-4
+af591000-af592000 ---p 00000000 00:00 0 
+af592000-afda2000 rw-p 00000000 00:00 0          [stack:9054]
+afda2000-afda3000 r--s 00000000 07:01 159448     /var/cache/fontconfig/4794a0821666d79190d59a36cb4f44b5-le32d4.cache-4
+afda3000-afda4000 r--s 00000000 07:01 159450     /var/cache/fontconfig/56cf4f4769d0f4abc89a4895d7bd3ae1-le32d4.cache-4
+afda4000-afda5000 r--s 00000000 07:01 159466     /var/cache/fontconfig/b9d506c9ac06c20b433354fa67a72993-le32d4.cache-4
+afda5000-afda8000 r--s 00000000 07:01 159472     /var/cache/fontconfig/d589a48862398ed80a3d6066f4f56f4c-le32d4.cache-4
+afda8000-afdce000 r-xp 00000000 07:01 18042      /usr/lib/libreoffice/program/liblocaledata_en.so
+afdce000-afdcf000 r--p 00025000 07:01 18042      /usr/lib/libreoffice/program/liblocaledata_en.so
+afdcf000-afdd6000 rw-p 00026000 07:01 18042      /usr/lib/libreoffice/program/liblocaledata_en.so
+afdd6000-afe2b000 r--s 00000000 07:01 18240      /usr/lib/libreoffice/program/types/oovbaapi.rdb
+afe2b000-afecc000 r--s 00000000 07:01 18239      /usr/lib/libreoffice/program/types/offapi.rdb
+afecc000-afeda000 r--s 00000000 07:01 28192      /usr/lib/ure/share/misc/types.rdb
+afeda000-afee1000 r-xp 00000000 07:01 16808      /usr/lib/i386-linux-gnu/libogg.so.0.8.1
+afee1000-afee2000 r--p 00006000 07:01 16808      /usr/lib/i386-linux-gnu/libogg.so.0.8.1
+afee2000-afee3000 rw-p 00007000 07:01 16808      /usr/lib/i386-linux-gnu/libogg.so.0.8.1
+afee3000-aff0c000 r-xp 00000000 07:01 17060      /usr/lib/i386-linux-gnu/libvorbis.so.0.4.5
+aff0c000-aff0d000 ---p 00029000 07:01 17060      /usr/lib/i386-linux-gnu/libvorbis.so.0.4.5
+aff0d000-aff0e000 r--p 00029000 07:01 17060      /usr/lib/i386-linux-gnu/libvorbis.so.0.4.5
+aff0e000-aff0f000 rw-p 0002a000 07:01 17060      /usr/lib/i386-linux-gnu/libvorbis.so.0.4.5
+aff0f000-aff18000 r-xp 00000000 07:01 16738      /usr/lib/i386-linux-gnu/libltdl.so.7.3.0
+aff18000-aff19000 r--p 00008000 07:01 16738      /usr/lib/i386-linux-gnu/libltdl.so.7.3.0
+aff19000-aff1a000 rw-p 00009000 07:01 16738      /usr/lib/i386-linux-gnu/libltdl.so.7.3.0
+aff1a000-aff2c000 r-xp 00000000 07:01 16977      /usr/lib/i386-linux-gnu/libtdb.so.1.2.11
+aff2c000-aff2d000 ---p 00012000 07:01 16977      /usr/lib/i386-linux-gnu/libtdb.so.1.2.11
+aff2d000-aff2e000 r--p 00012000 07:01 16977      /usr/lib/i386-linux-gnu/libtdb.so.1.2.11
+aff2e000-aff2f000 rw-p 00013000 07:01 16977      /usr/lib/i386-linux-gnu/libtdb.so.1.2.11
+aff2f000-aff37000 r-xp 00000000 07:01 17064      /usr/lib/i386-linux-gnu/libvorbisfile.so.3.3.4
+aff37000-aff38000 r--p 00007000 07:01 17064      /usr/lib/i386-linux-gnu/libvorbisfile.so.3.3.4
+aff38000-aff39000 rw-p 00008000 07:01 17064      /usr/lib/i386-linux-gnu/libvorbisfile.so.3.3.4
+aff39000-aff48000 r-xp 00000000 07:01 16211      /usr/lib/i386-linux-gnu/libcanberra.so.0.2.5
+aff48000-aff49000 r--p 0000e000 07:01 16211      /usr/lib/i386-linux-gnu/libcanberra.so.0.2.5
+aff49000-aff4a000 rw-p 0000f000 07:01 16211      /usr/lib/i386-linux-gnu/libcanberra.so.0.2.5
+aff4a000-aff4e000 r-xp 00000000 07:01 16207      /usr/lib/i386-linux-gnu/libcanberra-gtk.so.0.1.9
+aff4e000-aff4f000 r--p 00003000 07:01 16207      /usr/lib/i386-linux-gnu/libcanberra-gtk.so.0.1.9
+aff4f000-aff50000 rw-p 00004000 07:01 16207      /usr/lib/i386-linux-gnu/libcanberra-gtk.so.0.1.9
+aff50000-aff51000 r--s 00000000 07:01 159440     /var/cache/fontconfig/0c9eb80ebd1c36541ebe2852d3bb0c49-le32d4.cache-4
+aff51000-aff53000 r--s 00000000 00:10 40054      /var/cache/fontconfig/e13b20fdb08344e0e664864cc2ede53d-le32d4.cache-4
+aff53000-aff60000 r-xp 00000000 07:01 28147      /usr/lib/ure/lib/libgcc3_uno.so
+aff60000-aff61000 r--p 0000c000 07:01 28147      /usr/lib/ure/lib/libgcc3_uno.so
+aff61000-aff62000 rw-p 0000d000 07:01 28147      /usr/lib/ure/lib/libgcc3_uno.so
+aff62000-aff67000 r-xp 00000000 07:01 16000      /usr/lib/i386-linux-gnu/gtk-2.0/modules/libcanberra-gtk-module.so
+aff67000-aff68000 r--p 00004000 07:01 16000      /usr/lib/i386-linux-gnu/gtk-2.0/modules/libcanberra-gtk-module.so
+aff68000-aff69000 rw-p 00005000 07:01 16000      /usr/lib/i386-linux-gnu/gtk-2.0/modules/libcanberra-gtk-module.so
+aff69000-affe8000 r-xp 00000000 07:01 18123      /usr/lib/libreoffice/program/libvclplug_genlo.so
+affe8000-affe9000 ---p 0007f000 07:01 18123      /usr/lib/libreoffice/program/libvclplug_genlo.so
+affe9000-affed000 r--p 0007f000 07:01 18123      /usr/lib/libreoffice/program/libvclplug_genlo.so
+affed000-afff2000 rw-p 00083000 07:01 18123      /usr/lib/libreoffice/program/libvclplug_genlo.so
+afff2000-afff3000 rw-p 00000000 00:00 0 
+afff3000-afff4000 r-xp 00000000 07:01 16628      /usr/lib/i386-linux-gnu/libgthread-2.0.so.0.3800.0
+afff4000-afff5000 r--p 00000000 07:01 16628      /usr/lib/i386-linux-gnu/libgthread-2.0.so.0.3800.0
+afff5000-afff6000 rw-p 00001000 07:01 16628      /usr/lib/i386-linux-gnu/libgthread-2.0.so.0.3800.0
+afff6000-b0079000 r-xp 00000000 07:01 18124      /usr/lib/libreoffice/program/libvclplug_gtklo.so
+b0079000-b007a000 ---p 00083000 07:01 18124      /usr/lib/libreoffice/program/libvclplug_gtklo.so
+b007a000-b007c000 r--p 00083000 07:01 18124      /usr/lib/libreoffice/program/libvclplug_gtklo.so
+b007c000-b0081000 rw-p 00085000 07:01 18124      /usr/lib/libreoffice/program/libvclplug_gtklo.so
+b0081000-b0082000 rw-p 00000000 00:00 0 
+b0082000-b008d000 r-xp 00000000 07:01 3743       /lib/i386-linux-gnu/libnss_files-2.17.so
+b008d000-b008e000 r--p 0000a000 07:01 3743       /lib/i386-linux-gnu/libnss_files-2.17.so
+b008e000-b008f000 rw-p 0000b000 07:01 3743       /lib/i386-linux-gnu/libnss_files-2.17.so
+b008f000-b0099000 r-xp 00000000 07:01 3748       /lib/i386-linux-gnu/libnss_nis-2.17.so
+b0099000-b009a000 r--p 00009000 07:01 3748       /lib/i386-linux-gnu/libnss_nis-2.17.so
+b009a000-b009b000 rw-p 0000a000 07:01 3748       /lib/i386-linux-gnu/libnss_nis-2.17.so
+b009b000-b00b0000 r-xp 00000000 07:01 3737       /lib/i386-linux-gnu/libnsl-2.17.so
+b00b0000-b00b1000 r--p 00014000 07:01 3737       /lib/i386-linux-gnu/libnsl-2.17.so
+b00b1000-b00b2000 rw-p 00015000 07:01 3737       /lib/i386-linux-gnu/libnsl-2.17.so
+b00b2000-b00b4000 rw-p 00000000 00:00 0 
+b00b4000-b00bb000 r-xp 00000000 07:01 3739       /lib/i386-linux-gnu/libnss_compat-2.17.so
+b00bb000-b00bc000 r--p 00006000 07:01 3739       /lib/i386-linux-gnu/libnss_compat-2.17.so
+b00bc000-b00bd000 rw-p 00007000 07:01 3739       /lib/i386-linux-gnu/libnss_compat-2.17.so
+b00bd000-b00c0000 r--s 00000000 00:10 40024      /var/cache/fontconfig/7ef2298fde41cc6eeb7af42e48b7d293-le32d4.cache-4
+b00c0000-b00c2000 r-xp 00000000 07:01 15977      /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/engines/libadwaita.so
+b00c2000-b00c3000 r--p 00001000 07:01 15977      /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/engines/libadwaita.so
+b00c3000-b00c4000 rw-p 00002000 07:01 15977      /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/engines/libadwaita.so
+b00c4000-b00cd000 r-xp 00000000 07:01 15978      /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/engines/libpixmap.so
+b00cd000-b00ce000 r--p 00008000 07:01 15978      /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/engines/libpixmap.so
+b00ce000-b00cf000 rw-p 00009000 07:01 15978      /usr/lib/i386-linux-gnu/gtk-2.0/2.10.0/engines/libpixmap.so
+b00cf000-b00df000 rw-p 00000000 00:00 0 
+b00df000-b00e0000 ---p 00000000 00:00 0 
+b00e0000-b0900000 rw-p 00000000 00:00 0          [stack:9042]
+b0900000-b0b00000 r--p 00000000 07:01 20763      /usr/lib/locale/locale-archive
+b0b00000-b0b0a000 rw-p 00000000 00:00 0 
+b0b0a000-b0b13000 r-xp 00000000 07:01 3675       /lib/i386-linux-gnu/libcrypt-2.17.so
+b0b13000-b0b14000 r--p 00008000 07:01 3675       /lib/i386-linux-gnu/libcrypt-2.17.so
+b0b14000-b0b15000 rw-p 00009000 07:01 3675       /lib/i386-linux-gnu/libcrypt-2.17.so
+b0b15000-b0b3c000 rw-p 00000000 00:00 0 
+b0b3c000-b0bee000 r-xp 00000000 07:01 16961      /usr/lib/i386-linux-gnu/libsqlite3.so.0.8.6
+b0bee000-b0bef000 r--p 000b1000 07:01 16961      /usr/lib/i386-linux-gnu/libsqlite3.so.0.8.6
+b0bef000-b0bf0000 rw-p 000b2000 07:01 16961      /usr/lib/i386-linux-gnu/libsqlite3.so.0.8.6
+b0bf0000-b0bf1000 rw-p 00000000 00:00 0 
+b0bf1000-b0c34000 r-xp 00000000 07:01 16666      /usr/lib/i386-linux-gnu/libhx509.so.5.0.0
+b0c34000-b0c35000 ---p 00043000 07:01 16666      /usr/lib/i386-linux-gnu/libhx509.so.5.0.0
+b0c35000-b0c36000 r--p 00043000 07:01 16666      /usr/lib/i386-linux-gnu/libhx509.so.5.0.0
+b0c36000-b0c37000 rw-p 00044000 07:01 16666      /usr/lib/i386-linux-gnu/libhx509.so.5.0.0
+b0c37000-b0c38000 rw-p 00000000 00:00 0 
+b0c38000-b0c45000 r-xp 00000000 07:01 16660      /usr/lib/i386-linux-gnu/libheimbase.so.1.0.0
+b0c45000-b0c46000 r--p 0000c000 07:01 16660      /usr/lib/i386-linux-gnu/libheimbase.so.1.0.0
+b0c46000-b0c47000 rw-p 0000d000 07:01 16660      /usr/lib/i386-linux-gnu/libheimbase.so.1.0.0
+b0c47000-b0c6e000 r-xp 00000000 07:01 17080      /usr/lib/i386-linux-gnu/libwind.so.0.0.0
+b0c6e000-b0c6f000 ---p 00027000 07:01 17080      /usr/lib/i386-linux-gnu/libwind.so.0.0.0
+b0c6f000-b0c70000 r--p 00027000 07:01 17080      /usr/lib/i386-linux-gnu/libwind.so.0.0.0
+b0c70000-b0c71000 rw-p 00028000 07:01 17080      /usr/lib/i386-linux-gnu/libwind.so.0.0.0
+b0c71000-b0c72000 rw-p 00000000 00:00 0 
+b0c72000-b0c86000 r-xp 00000000 07:01 16908      /usr/lib/i386-linux-gnu/libroken.so.18.1.0
+b0c86000-b0c87000 r--p 00013000 07:01 16908      /usr/lib/i386-linux-gnu/libroken.so.18.1.0
+b0c87000-b0c88000 rw-p 00014000 07:01 16908      /usr/lib/i386-linux-gnu/libroken.so.18.1.0
+b0c88000-b0cba000 r-xp 00000000 07:01 16658      /usr/lib/i386-linux-gnu/libhcrypto.so.4.1.0
+b0cba000-b0cbb000 ---p 00032000 07:01 16658      /usr/lib/i386-linux-gnu/libhcrypto.so.4.1.0
+b0cbb000-b0cbc000 r--p 00032000 07:01 16658      /usr/lib/i386-linux-gnu/libhcrypto.so.4.1.0
+b0cbc000-b0cbd000 rw-p 00033000 07:01 16658      /usr/lib/i386-linux-gnu/libhcrypto.so.4.1.0
+b0cbd000-b0cbe000 rw-p 00000000 00:00 0 
+b0cbe000-b0d5b000 r-xp 00000000 07:01 16148      /usr/lib/i386-linux-gnu/libasn1.so.8.0.0
+b0d5b000-b0d5c000 r--p 0009c000 07:01 16148      /usr/lib/i386-linux-gnu/libasn1.so.8.0.0
+b0d5c000-b0d5e000 rw-p 0009d000 07:01 16148      /usr/lib/i386-linux-gnu/libasn1.so.8.0.0
+b0d5e000-b0ddb000 r-xp 00000000 07:01 16719      /usr/lib/i386-linux-gnu/libkrb5.so.26.0.0
+b0ddb000-b0ddd000 r--p 0007c000 07:01 16719      /usr/lib/i386-linux-gnu/libkrb5.so.26.0.0
+b0ddd000-b0ddf000 rw-p 0007e000 07:01 16719      /usr/lib/i386-linux-gnu/libkrb5.so.26.0.0
+b0ddf000-b0de5000 r-xp 00000000 07:01 16662      /usr/lib/i386-linux-gnu/libheimntlm.so.0.1.0
+b0de5000-b0de6000 r--p 00005000 07:01 16662      /usr/lib/i386-linux-gnu/libheimntlm.so.0.1.0
+b0de6000-b0de7000 rw-p 00006000 07:01 16662      /usr/lib/i386-linux-gnu/libheimntlm.so.0.1.0
+b0de7000-b0de8000 rw-p 00000000 00:00 0 
+b0de8000-b0dea000 r-xp 00000000 07:01 3710       /lib/i386-linux-gnu/libkeyutils.so.1.4
+b0dea000-b0deb000 r--p 00002000 07:01 3710       /lib/i386-linux-gnu/libkeyutils.so.1.4
+b0deb000-b0dec000 rw-p 00003000 07:01 3710       /lib/i386-linux-gnu/libkeyutils.so.1.4
+b0dec000-b0e08000 r-xp 00000000 07:01 28167      /usr/lib/ure/lib/libstorelo.so
+b0e08000-b0e09000 r--p 0001b000 07:01 28167      /usr/lib/ure/lib/libstorelo.so
+b0e09000-b0e0a000 rw-p 0001c000 07:01 28167      /usr/lib/ure/lib/libstorelo.so
+b0e0a000-b0e10000 r-xp 00000000 07:01 16274      /usr/lib/i386-linux-gnu/libdatrie.so.1.2.0
+b0e10000-b0e11000 r--p 00006000 07:01 16274      /usr/lib/i386-linux-gnu/libdatrie.so.1.2.0
+b0e11000-b0e12000 rw-p 00007000 07:01 16274      /usr/lib/i386-linux-gnu/libdatrie.so.1.2.0
+b0e12000-b0e17000 r-xp 00000000 07:01 16092      /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0
+b0e17000-b0e18000 r--p 00004000 07:01 16092      /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0
+b0e18000-b0e19000 rw-p 00005000 07:01 16092      /usr/lib/i386-linux-gnu/libXdmcp.so.6.0.0
+b0e19000-b0e1b000 r-xp 00000000 07:01 16081      /usr/lib/i386-linux-gnu/libXau.so.6.0.0
+b0e1b000-b0e1c000 r--p 00001000 07:01 16081      /usr/lib/i386-linux-gnu/libXau.so.6.0.0
+b0e1c000-b0e1d000 rw-p 00002000 07:01 16081      /usr/lib/i386-linux-gnu/libXau.so.6.0.0
+b0e1d000-b0e1e000 rw-p 00000000 00:00 0 
+b0e1e000-b0e57000 r-xp 00000000 07:01 16546      /usr/lib/i386-linux-gnu/libgssapi.so.3.0.0
+b0e57000-b0e58000 r--p 00038000 07:01 16546      /usr/lib/i386-linux-gnu/libgssapi.so.3.0.0
+b0e58000-b0e59000 rw-p 00039000 07:01 16546      /usr/lib/i386-linux-gnu/libgssapi.so.3.0.0
+b0e59000-b0e5a000 rw-p 00000000 00:00 0 
+b0e5a000-b0e73000 r-xp 00000000 07:01 16925      /usr/lib/i386-linux-gnu/libsasl2.so.2.0.25
+b0e73000-b0e74000 r--p 00019000 07:01 16925      /usr/lib/i386-linux-gnu/libsasl2.so.2.0.25
+b0e74000-b0e75000 rw-p 0001a000 07:01 16925      /usr/lib/i386-linux-gnu/libsasl2.so.2.0.25
+b0e75000-b0e78000 r-xp 00000000 07:01 3698       /lib/i386-linux-gnu/libgpg-error.so.0.10.0
+b0e78000-b0e79000 r--p 00002000 07:01 3698       /lib/i386-linux-gnu/libgpg-error.so.0.10.0
+b0e79000-b0e7a000 rw-p 00003000 07:01 3698       /lib/i386-linux-gnu/libgpg-error.so.0.10.0
+b0e7a000-b0e96000 r-xp 00000000 07:01 16816      /usr/lib/i386-linux-gnu/libp11-kit.so.0.0.0
+b0e96000-b0e97000 ---p 0001c000 07:01 16816      /usr/lib/i386-linux-gnu/libp11-kit.so.0.0.0
+b0e97000-b0e98000 r--p 0001c000 07:01 16816      /usr/lib/i386-linux-gnu/libp11-kit.so.0.0.0
+b0e98000-b0e99000 rw-p 0001d000 07:01 16816      /usr/lib/i386-linux-gnu/libp11-kit.so.0.0.0
+b0e99000-b0e9a000 rw-p 00000000 00:00 0 
+b0e9a000-b0eaa000 r-xp 00000000 07:01 16975      /usr/lib/i386-linux-gnu/libtasn1.so.3.2.0
+b0eaa000-b0eab000 r--p 0000f000 07:01 16975      /usr/lib/i386-linux-gnu/libtasn1.so.3.2.0
+b0eab000-b0eac000 rw-p 00010000 07:01 16975      /usr/lib/i386-linux-gnu/libtasn1.so.3.2.0
+b0eac000-b0eb3000 r-xp 00000000 07:01 16723      /usr/lib/i386-linux-gnu/libkrb5support.so.0.1
+b0eb3000-b0eb4000 r--p 00006000 07:01 16723      /usr/lib/i386-linux-gnu/libkrb5support.so.0.1
+b0eb4000-b0eb5000 rw-p 00007000 07:01 16723      /usr/lib/i386-linux-gnu/libkrb5support.so.0.1
+b0eb5000-b0eb8000 r-xp 00000000 07:01 3674       /lib/i386-linux-gnu/libcom_err.so.2.1
+b0eb8000-b0eb9000 r--p 00002000 07:01 3674       /lib/i386-linux-gnu/libcom_err.so.2.1
+b0eb9000-b0eba000 rw-p 00003000 07:01 3674       /lib/i386-linux-gnu/libcom_err.so.2.1
+b0eba000-b0ee0000 r-xp 00000000 07:01 16717      /usr/lib/i386-linux-gnu/libk5crypto.so.3.1
+b0ee0000-b0ee1000 r--p 00025000 07:01 16717      /usr/lib/i386-linux-gnu/libk5crypto.so.3.1
+b0ee1000-b0ee2000 rw-p 00026000 07:01 16717      /usr/lib/i386-linux-gnu/libk5crypto.so.3.1
+b0ee2000-b0faa000 r-xp 00000000 07:01 16721      /usr/lib/i386-linux-gnu/libkrb5.so.3.3
+b0faa000-b0fb0000 r--p 000c7000 07:01 16721      /usr/lib/i386-linux-gnu/libkrb5.so.3.3
+b0fb0000-b0fb1000 rw-p 000cd000 07:01 16721      /usr/lib/i386-linux-gnu/libkrb5.so.3.3
+b0fb1000-b0fb2000 rw-p 00000000 00:00 0 
+b0fb2000-b0fd9000 r-xp 00000000 07:01 28177      /usr/lib/ure/lib/libunoidllo.so
+b0fd9000-b0fda000 r--p 00026000 07:01 28177      /usr/lib/ure/lib/libunoidllo.so
+b0fda000-b0fdb000 rw-p 00027000 07:01 28177      /usr/lib/ure/lib/libunoidllo.so
+b0fdb000-b0ffc000 r-xp 00000000 07:01 28164      /usr/lib/ure/lib/libreglo.so
+b0ffc000-b0ffd000 r--p 00020000 07:01 28164      /usr/lib/ure/lib/libreglo.so
+b0ffd000-b0ffe000 rw-p 00021000 07:01 28164      /usr/lib/ure/lib/libreglo.so
+b0ffe000-b1002000 r-xp 00000000 07:01 3821       /lib/i386-linux-gnu/libuuid.so.1.3.0
+b1002000-b1003000 r--p 00003000 07:01 3821       /lib/i386-linux-gnu/libuuid.so.1.3.0
+b1003000-b1004000 rw-p 00004000 07:01 3821       /lib/i386-linux-gnu/libuuid.so.1.3.0
+b1004000-b1005000 rw-p 00000000 00:00 0 
+b1005000-b102a000 r-xp 00000000 07:01 3715       /lib/i386-linux-gnu/liblzma.so.5.0.0
+b102a000-b102b000 r--p 00024000 07:01 3715       /lib/i386-linux-gnu/liblzma.so.5.0.0
+b102b000-b102c000 rw-p 00025000 07:01 3715       /lib/i386-linux-gnu/liblzma.so.5.0.0
+b102c000-b219b000 r-xp 00000000 07:01 16672      /usr/lib/i386-linux-gnu/libicudata.so.48.1.1
+b219b000-b219c000 r--p 0116e000 07:01 16672      /usr/lib/i386-linux-gnu/libicudata.so.48.1.1
+b219c000-b219d000 rw-p 0116f000 07:01 16672      /usr/lib/i386-linux-gnu/libicudata.so.48.1.1
+b219d000-b21a5000 r-xp 00000000 07:01 16987      /usr/lib/i386-linux-gnu/libthai.so.0.2.0
+b21a5000-b21a6000 r--p 00007000 07:01 16987      /usr/lib/i386-linux-gnu/libthai.so.0.2.0
+b21a6000-b21a7000 rw-p 00008000 07:01 16987      /usr/lib/i386-linux-gnu/libthai.so.0.2.0
+b21a7000-b21c6000 r-xp 00000000 07:01 17104      /usr/lib/i386-linux-gnu/libxcb.so.1.1.0
+b21c6000-b21c7000 r--p 0001f000 07:01 17104      /usr/lib/i386-linux-gnu/libxcb.so.1.1.0
+b21c7000-b21c8000 rw-p 00020000 07:01 17104      /usr/lib/i386-linux-gnu/libxcb.so.1.1.0
+b21c8000-b21c9000 rw-p 00000000 00:00 0 
+b21c9000-b21d1000 r-xp 00000000 07:01 17094      /usr/lib/i386-linux-gnu/libxcb-render.so.0.0.0
+b21d1000-b21d2000 r--p 00008000 07:01 17094      /usr/lib/i386-linux-gnu/libxcb-render.so.0.0.0
+b21d2000-b21d3000 rw-p 00009000 07:01 17094      /usr/lib/i386-linux-gnu/libxcb-render.so.0.0.0
+b21d3000-b21d5000 r-xp 00000000 07:01 17098      /usr/lib/i386-linux-gnu/libxcb-shm.so.0.0.0
+b21d5000-b21d6000 r--p 00001000 07:01 17098      /usr/lib/i386-linux-gnu/libxcb-shm.so.0.0.0
+b21d6000-b21d7000 rw-p 00002000 07:01 17098      /usr/lib/i386-linux-gnu/libxcb-shm.so.0.0.0
+b21d7000-b21fd000 r-xp 00000000 07:01 3778       /lib/i386-linux-gnu/libpng12.so.0.49.0
+b21fd000-b21fe000 r--p 00025000 07:01 3778       /lib/i386-linux-gnu/libpng12.so.0.49.0
+b21fe000-b21ff000 rw-p 00026000 07:01 3778       /lib/i386-linux-gnu/libpng12.so.0.49.0
+b21ff000-b22a3000 r-xp 00000000 07:01 16846      /usr/lib/i386-linux-gnu/libpixman-1.so.0.30.2
+b22a3000-b22a8000 r--p 000a4000 07:01 16846      /usr/lib/i386-linux-gnu/libpixman-1.so.0.30.2
+b22a8000-b22a9000 rw-p 000a9000 07:01 16846      /usr/lib/i386-linux-gnu/libpixman-1.so.0.30.2
+b22a9000-b22ab000 r-xp 00000000 07:01 16090      /usr/lib/i386-linux-gnu/libXdamage.so.1.1.0
+b22ab000-b22ac000 r--p 00001000 07:01 16090      /usr/lib/i386-linux-gnu/libXdamage.so.1.1.0
+b22ac000-b22ad000 rw-p 00002000 07:01 16090      /usr/lib/i386-linux-gnu/libXdamage.so.1.1.0
+b22ad000-b22ae000 rw-p 00000000 00:00 0 
+b22ae000-b22b0000 r-xp 00000000 07:01 16086      /usr/lib/i386-linux-gnu/libXcomposite.so.1.0.0
+b22b0000-b22b1000 r--p 00001000 07:01 16086      /usr/lib/i386-linux-gnu/libXcomposite.so.1.0.0
+b22b1000-b22b2000 rw-p 00002000 07:01 16086      /usr/lib/i386-linux-gnu/libXcomposite.so.1.0.0
+b22b2000-b22bb000 r-xp 00000000 07:01 16088      /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2
+b22bb000-b22bc000 r--p 00008000 07:01 16088      /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2
+b22bc000-b22bd000 rw-p 00009000 07:01 16088      /usr/lib/i386-linux-gnu/libXcursor.so.1.0.2
+b22bd000-b22c6000 r-xp 00000000 07:01 16114      /usr/lib/i386-linux-gnu/libXrandr.so.2.2.0
+b22c6000-b22c7000 r--p 00008000 07:01 16114      /usr/lib/i386-linux-gnu/libXrandr.so.2.2.0
+b22c7000-b22c8000 rw-p 00009000 07:01 16114      /usr/lib/i386-linux-gnu/libXrandr.so.2.2.0
+b22c8000-b22d7000 r-xp 00000000 07:01 16102      /usr/lib/i386-linux-gnu/libXi.so.6.1.0
+b22d7000-b22d8000 r--p 0000e000 07:01 16102      /usr/lib/i386-linux-gnu/libXi.so.6.1.0
+b22d8000-b22d9000 rw-p 0000f000 07:01 16102      /usr/lib/i386-linux-gnu/libXi.so.6.1.0
+b22d9000-b22db000 r-xp 00000000 07:01 16104      /usr/lib/i386-linux-gnu/libXinerama.so.1.0.0
+b22db000-b22dc000 r--p 00001000 07:01 16104      /usr/lib/i386-linux-gnu/libXinerama.so.1.0.0
+b22dc000-b22dd000 rw-p 00002000 07:01 16104      /usr/lib/i386-linux-gnu/libXinerama.so.1.0.0
+b22dd000-b22de000 rw-p 00000000 00:00 0 
+b22de000-b22e7000 r-xp 00000000 07:01 16116      /usr/lib/i386-linux-gnu/libXrender.so.1.3.0
+b22e7000-b22e8000 r--p 00008000 07:01 16116      /usr/lib/i386-linux-gnu/libXrender.so.1.3.0
+b22e8000-b22e9000 rw-p 00009000 07:01 16116      /usr/lib/i386-linux-gnu/libXrender.so.1.3.0
+b22e9000-b22ed000 r-xp 00000000 07:01 16096      /usr/lib/i386-linux-gnu/libXfixes.so.3.1.0
+b22ed000-b22ee000 r--p 00003000 07:01 16096      /usr/lib/i386-linux-gnu/libXfixes.so.3.1.0
+b22ee000-b22ef000 rw-p 00004000 07:01 16096      /usr/lib/i386-linux-gnu/libXfixes.so.3.1.0
+b22ef000-b2302000 r-xp 00000000 07:01 3789       /lib/i386-linux-gnu/libresolv-2.17.so
+b2302000-b2303000 r--p 00013000 07:01 3789       /lib/i386-linux-gnu/libresolv-2.17.so
+b2303000-b2304000 rw-p 00014000 07:01 3789       /lib/i386-linux-gnu/libresolv-2.17.so
+b2304000-b2306000 rw-p 00000000 00:00 0 
+b2306000-b2326000 r-xp 00000000 07:01 3793       /lib/i386-linux-gnu/libselinux.so.1
+b2326000-b2327000 r--p 0001f000 07:01 3793       /lib/i386-linux-gnu/libselinux.so.1
+b2327000-b2328000 rw-p 00020000 07:01 3793       /lib/i386-linux-gnu/libselinux.so.1
+b2328000-b2367000 r-xp 00000000 07:01 3766       /lib/i386-linux-gnu/libpcre.so.3.13.1
+b2367000-b2368000 r--p 0003f000 07:01 3766       /lib/i386-linux-gnu/libpcre.so.3.13.1
+b2368000-b2369000 rw-p 00040000 07:01 3766       /lib/i386-linux-gnu/libpcre.so.3.13.1
+b2369000-b236a000 rw-p 00000000 00:00 0 
+b236a000-b236f000 r-xp 00000000 07:01 16331      /usr/lib/i386-linux-gnu/libffi.so.6.0.1
+b236f000-b2370000 r--p 00005000 07:01 16331      /usr/lib/i386-linux-gnu/libffi.so.6.0.1
+b2370000-b2371000 rw-p 00006000 07:01 16331      /usr/lib/i386-linux-gnu/libffi.so.6.0.1
+b2371000-b23c0000 r-xp 00000000 07:01 16732      /usr/lib/i386-linux-gnu/libldap_r-2.4.so.2.8.3
+b23c0000-b23c1000 r--p 0004f000 07:01 16732      /usr/lib/i386-linux-gnu/libldap_r-2.4.so.2.8.3
+b23c1000-b23c2000 rw-p 00050000 07:01 16732      /usr/lib/i386-linux-gnu/libldap_r-2.4.so.2.8.3
+b23c2000-b23c3000 rw-p 00000000 00:00 0 
+b23c3000-b23d0000 r-xp 00000000 07:01 16725      /usr/lib/i386-linux-gnu/liblber-2.4.so.2.8.3
+b23d0000-b23d1000 r--p 0000c000 07:01 16725      /usr/lib/i386-linux-gnu/liblber-2.4.so.2.8.3
+b23d1000-b23d2000 rw-p 0000d000 07:01 16725      /usr/lib/i386-linux-gnu/liblber-2.4.so.2.8.3
+b23d2000-b2453000 r-xp 00000000 07:01 3694       /lib/i386-linux-gnu/libgcrypt.so.11.7.0
+b2453000-b2454000 r--p 00081000 07:01 3694       /lib/i386-linux-gnu/libgcrypt.so.11.7.0
+b2454000-b2456000 rw-p 00082000 07:01 3694       /lib/i386-linux-gnu/libgcrypt.so.11.7.0
+b2456000-b246f000 r-xp 00000000 07:01 16918      /usr/lib/i386-linux-gnu/librtmp.so.0
+b246f000-b2470000 r--p 00018000 07:01 16918      /usr/lib/i386-linux-gnu/librtmp.so.0
+b2470000-b2471000 rw-p 00019000 07:01 16918      /usr/lib/i386-linux-gnu/librtmp.so.0
+b2471000-b2472000 rw-p 00000000 00:00 0 
+b2472000-b24a3000 r-xp 00000000 07:01 16688      /usr/lib/i386-linux-gnu/libidn.so.11.6.11
+b24a3000-b24a4000 r--p 00030000 07:01 16688      /usr/lib/i386-linux-gnu/libidn.so.11.6.11
+b24a4000-b24a5000 rw-p 00031000 07:01 16688      /usr/lib/i386-linux-gnu/libidn.so.11.6.11
+b24a5000-b24b5000 r-xp 00000000 07:01 16170      /usr/lib/i386-linux-gnu/libavahi-client.so.3.2.9
+b24b5000-b24b6000 r--p 0000f000 07:01 16170      /usr/lib/i386-linux-gnu/libavahi-client.so.3.2.9
+b24b6000-b24b7000 rw-p 00010000 07:01 16170      /usr/lib/i386-linux-gnu/libavahi-client.so.3.2.9
+b24b7000-b24c3000 r-xp 00000000 07:01 16172      /usr/lib/i386-linux-gnu/libavahi-common.so.3.5.3
+b24c3000-b24c4000 r--p 0000b000 07:01 16172      /usr/lib/i386-linux-gnu/libavahi-common.so.3.5.3
+b24c4000-b24c5000 rw-p 0000c000 07:01 16172      /usr/lib/i386-linux-gnu/libavahi-common.so.3.5.3
+b24c5000-b2586000 r-xp 00000000 07:01 16441      /usr/lib/i386-linux-gnu/libgnutls.so.26.22.6
+b2586000-b258a000 r--p 000c0000 07:01 16441      /usr/lib/i386-linux-gnu/libgnutls.so.26.22.6
+b258a000-b258b000 rw-p 000c4000 07:01 16441      /usr/lib/i386-linux-gnu/libgnutls.so.26.22.6
+b258b000-b25c6000 r-xp 00000000 07:01 16548      /usr/lib/i386-linux-gnu/libgssapi_krb5.so.2.2
+b25c6000-b25c7000 r--p 0003a000 07:01 16548      /usr/lib/i386-linux-gnu/libgssapi_krb5.so.2.2
+b25c7000-b25c8000 rw-p 0003b000 07:01 16548      /usr/lib/i386-linux-gnu/libgssapi_krb5.so.2.2
+b25c8000-b25c9000 rw-p 00000000 00:00 0 
+b25c9000-b25cf000 r-xp 00000000 07:01 17720      /usr/lib/libcolamd.so.2.7.1
+b25cf000-b25d0000 r--p 00005000 07:01 17720      /usr/lib/libcolamd.so.2.7.1
+b25d0000-b25d1000 rw-p 00006000 07:01 17720      /usr/lib/libcolamd.so.2.7.1
+b25d1000-b25ec000 r-xp 00000000 07:01 3692       /lib/i386-linux-gnu/libgcc_s.so.1
+b25ec000-b25ed000 r--p 0001a000 07:01 3692       /lib/i386-linux-gnu/libgcc_s.so.1
+b25ed000-b25ee000 rw-p 0001b000 07:01 3692       /lib/i386-linux-gnu/libgcc_s.so.1
+b25ee000-b262f000 r-xp 00000000 07:01 3718       /lib/i386-linux-gnu/libm-2.17.so
+b262f000-b2630000 r--p 00040000 07:01 3718       /lib/i386-linux-gnu/libm-2.17.so
+b2630000-b2631000 rw-p 00041000 07:01 3718       /lib/i386-linux-gnu/libm-2.17.so
+b2631000-b270e000 r-xp 00000000 07:01 16967      /usr/lib/i386-linux-gnu/libstdc++.so.6.0.18
+b270e000-b2712000 r--p 000dc000 07:01 16967      /usr/lib/i386-linux-gnu/libstdc++.so.6.0.18
+b2712000-b2713000 rw-p 000e0000 07:01 16967      /usr/lib/i386-linux-gnu/libstdc++.so.6.0.18
+b2713000-b271b000 rw-p 00000000 00:00 0 
+b271b000-b2724000 r-xp 00000000 07:01 28180      /usr/lib/ure/lib/libxmlreaderlo.so
+b2724000-b2725000 r--p 00008000 07:01 28180      /usr/lib/ure/lib/libxmlreaderlo.so
+b2725000-b2726000 rw-p 00009000 07:01 28180      /usr/lib/ure/lib/libxmlreaderlo.so
+b2726000-b27ac000 r-xp 00000000 07:01 18105      /usr/lib/libreoffice/program/libucbhelper.so
+b27ac000-b27af000 r--p 00085000 07:01 18105      /usr/lib/libreoffice/program/libucbhelper.so
+b27af000-b27b0000 rw-p 00088000 07:01 18105      /usr/lib/libreoffice/program/libucbhelper.so
+b27b0000-b27b6000 r-xp 00000000 07:01 28176      /usr/lib/ure/lib/libuno_salhelpergcc3.so.3
+b27b6000-b27b7000 r--p 00005000 07:01 28176      /usr/lib/ure/lib/libuno_salhelpergcc3.so.3
+b27b7000-b27b8000 rw-p 00006000 07:01 28176      /usr/lib/ure/lib/libuno_salhelpergcc3.so.3
+b27b8000-b27d1000 r-xp 00000000 07:01 28159      /usr/lib/ure/lib/libjvmfwklo.so
+b27d1000-b27d2000 r--p 00018000 07:01 28159      /usr/lib/ure/lib/libjvmfwklo.so
+b27d2000-b27d3000 rw-p 00019000 07:01 28159      /usr/lib/ure/lib/libjvmfwklo.so
+b27d3000-b27d8000 r-xp 00000000 07:01 28158      /usr/lib/ure/lib/libjvmaccesslo.so
+b27d8000-b27d9000 ---p 00005000 07:01 28158      /usr/lib/ure/lib/libjvmaccesslo.so
+b27d9000-b27da000 r--p 00005000 07:01 28158      /usr/lib/ure/lib/libjvmaccesslo.so
+b27da000-b27db000 rw-p 00006000 07:01 28158      /usr/lib/ure/lib/libjvmaccesslo.so
+b27db000-b27dc000 rw-p 00000000 00:00 0 
+b27dc000-b27e9000 r-xp 00000000 07:01 18024      /usr/lib/libreoffice/program/libi18nlangtag.so
+b27e9000-b27ea000 r--p 0000c000 07:01 18024      /usr/lib/libreoffice/program/libi18nlangtag.so
+b27ea000-b27eb000 rw-p 0000d000 07:01 18024      /usr/lib/libreoffice/program/libi18nlangtag.so
+b27eb000-b28e1000 r-xp 00000000 07:01 28173      /usr/lib/ure/lib/libuno_cppuhelpergcc3.so.3
+b28e1000-b28e2000 ---p 000f6000 07:01 28173      /usr/lib/ure/lib/libuno_cppuhelpergcc3.so.3
+b28e2000-b28e7000 r--p 000f6000 07:01 28173      /usr/lib/ure/lib/libuno_cppuhelpergcc3.so.3
+b28e7000-b28e8000 rw-p 000fb000 07:01 28173      /usr/lib/ure/lib/libuno_cppuhelpergcc3.so.3
+b28e8000-b28e9000 rw-p 00000000 00:00 0 
+b28e9000-b292a000 r-xp 00000000 07:01 28172      /usr/lib/ure/lib/libuno_cppu.so.3
+b292a000-b292b000 r--p 00040000 07:01 28172      /usr/lib/ure/lib/libuno_cppu.so.3
+b292b000-b292c000 rw-p 00041000 07:01 28172      /usr/lib/ure/lib/libuno_cppu.so.3
+b292c000-b2a9e000 r-xp 00000000 07:01 17983      /usr/lib/libreoffice/program/libcomphelper.so
+b2a9e000-b2aa7000 r--p 00172000 07:01 17983      /usr/lib/libreoffice/program/libcomphelper.so
+b2aa7000-b2aa9000 rw-p 0017b000 07:01 17983      /usr/lib/libreoffice/program/libcomphelper.so
+b2aa9000-b2aaa000 rw-p 00000000 00:00 0 
+b2aaa000-b2ab1000 r-xp 00000000 07:01 3791       /lib/i386-linux-gnu/librt-2.17.so
+b2ab1000-b2ab2000 r--p 00006000 07:01 3791       /lib/i386-linux-gnu/librt-2.17.so
+b2ab2000-b2ab3000 rw-p 00007000 07:01 3791       /lib/i386-linux-gnu/librt-2.17.so
+b2ab3000-b2ab4000 rw-p 00000000 00:00 0 
+b2ab4000-b2acb000 r-xp 00000000 07:01 3783       /lib/i386-linux-gnu/libpthread-2.17.so
+b2acb000-b2acc000 r--p 00016000 07:01 3783       /lib/i386-linux-gnu/libpthread-2.17.so
+b2acc000-b2acd000 rw-p 00017000 07:01 3783       /lib/i386-linux-gnu/libpthread-2.17.so
+b2acd000-b2acf000 rw-p 00000000 00:00 0 
+b2acf000-b2ad2000 r-xp 00000000 07:01 3682       /lib/i386-linux-gnu/libdl-2.17.so
+b2ad2000-b2ad3000 r--p 00002000 07:01 3682       /lib/i386-linux-gnu/libdl-2.17.so
+b2ad3000-b2ad4000 rw-p 00003000 07:01 3682       /lib/i386-linux-gnu/libdl-2.17.so
+b2ad4000-b2aea000 r-xp 00000000 07:01 16070      /usr/lib/i386-linux-gnu/libICE.so.6.3.0
+b2aea000-b2aeb000 r--p 00015000 07:01 16070      /usr/lib/i386-linux-gnu/libICE.so.6.3.0
+b2aeb000-b2aec000 rw-p 00016000 07:01 16070      /usr/lib/i386-linux-gnu/libICE.so.6.3.0
+b2aec000-b2aee000 rw-p 00000000 00:00 0 
+b2aee000-b2af5000 r-xp 00000000 07:01 16073      /usr/lib/i386-linux-gnu/libSM.so.6.0.1
+b2af5000-b2af6000 r--p 00006000 07:01 16073      /usr/lib/i386-linux-gnu/libSM.so.6.0.1
+b2af6000-b2af7000 rw-p 00007000 07:01 16073      /usr/lib/i386-linux-gnu/libSM.so.6.0.1
+b2af7000-b2b08000 r-xp 00000000 07:01 16094      /usr/lib/i386-linux-gnu/libXext.so.6.4.0
+b2b08000-b2b09000 r--p 00010000 07:01 16094      /usr/lib/i386-linux-gnu/libXext.so.6.4.0
+b2b09000-b2b0a000 rw-p 00011000 07:01 16094      /usr/lib/i386-linux-gnu/libXext.so.6.4.0
+b2b0a000-b2b0b000 rw-p 00000000 00:00 0 
+b2b0b000-b2c3b000 r-xp 00000000 07:01 16077      /usr/lib/i386-linux-gnu/libX11.so.6.3.0
+b2c3b000-b2c3c000 ---p 00130000 07:01 16077      /usr/lib/i386-linux-gnu/libX11.so.6.3.0
+b2c3c000-b2c3d000 r--p 00130000 07:01 16077      /usr/lib/i386-linux-gnu/libX11.so.6.3.0
+b2c3d000-b2c3f000 rw-p 00131000 07:01 16077      /usr/lib/i386-linux-gnu/libX11.so.6.3.0
+b2c3f000-b2c40000 rw-p 00000000 00:00 0 
+b2c40000-b2c58000 r-xp 00000000 07:01 3825       /lib/i386-linux-gnu/libz.so.1.2.8
+b2c58000-b2c59000 r--p 00017000 07:01 3825       /lib/i386-linux-gnu/libz.so.1.2.8
+b2c59000-b2c5a000 rw-p 00018000 07:01 3825       /lib/i386-linux-gnu/libz.so.1.2.8
+b2c5a000-b2c93000 r-xp 00000000 07:01 16794      /usr/lib/i386-linux-gnu/libnspr4.so
+b2c93000-b2c94000 r--p 00039000 07:01 16794      /usr/lib/i386-linux-gnu/libnspr4.so
+b2c94000-b2c95000 rw-p 0003a000 07:01 16794      /usr/lib/i386-linux-gnu/libnspr4.so
+b2c95000-b2c97000 rw-p 00000000 00:00 0 
+b2c97000-b2c9b000 r-xp 00000000 07:01 16847      /usr/lib/i386-linux-gnu/libplc4.so
+b2c9b000-b2c9c000 r--p 00003000 07:01 16847      /usr/lib/i386-linux-gnu/libplc4.so
+b2c9c000-b2c9d000 rw-p 00004000 07:01 16847      /usr/lib/i386-linux-gnu/libplc4.so
+b2c9d000-b2ca0000 r-xp 00000000 07:01 16848      /usr/lib/i386-linux-gnu/libplds4.so
+b2ca0000-b2ca1000 r--p 00002000 07:01 16848      /usr/lib/i386-linux-gnu/libplds4.so
+b2ca1000-b2ca2000 rw-p 00003000 07:01 16848      /usr/lib/i386-linux-gnu/libplds4.so
+b2ca2000-b2ca3000 rw-p 00000000 00:00 0 
+b2ca3000-b2ce6000 r-xp 00000000 07:01 16962      /usr/lib/i386-linux-gnu/libssl3.so
+b2ce6000-b2ce8000 r--p 00042000 07:01 16962      /usr/lib/i386-linux-gnu/libssl3.so
+b2ce8000-b2ce9000 rw-p 00044000 07:01 16962      /usr/lib/i386-linux-gnu/libssl3.so
+b2ce9000-b2d10000 r-xp 00000000 07:01 16940      /usr/lib/i386-linux-gnu/libsmime3.so
+b2d10000-b2d11000 ---p 00027000 07:01 16940      /usr/lib/i386-linux-gnu/libsmime3.so
+b2d11000-b2d13000 r--p 00027000 07:01 16940      /usr/lib/i386-linux-gnu/libsmime3.so
+b2d13000-b2d14000 rw-p 00029000 07:01 16940      /usr/lib/i386-linux-gnu/libsmime3.so
+b2d14000-b2d34000 r-xp 00000000 07:01 16803      /usr/lib/i386-linux-gnu/libnssutil3.so
+b2d34000-b2d37000 r--p 00020000 07:01 16803      /usr/lib/i386-linux-gnu/libnssutil3.so
+b2d37000-b2d38000 rw-p 00023000 07:01 16803      /usr/lib/i386-linux-gnu/libnssutil3.so
+b2d38000-b2e75000 r-xp 00000000 07:01 16795      /usr/lib/i386-linux-gnu/libnss3.so
+b2e75000-b2e78000 r--p 0013c000 07:01 16795      /usr/lib/i386-linux-gnu/libnss3.so
+b2e78000-b2e79000 rw-p 0013f000 07:01 16795      /usr/lib/i386-linux-gnu/libnss3.so
+b2e79000-b2e7a000 rw-p 00000000 00:00 0 
+b2e7a000-b2e7c000 r-xp 00000000 07:01 17861      /usr/lib/libmythes-1.2.so.0.0.0
+b2e7c000-b2e7d000 r--p 00001000 07:01 17861      /usr/lib/libmythes-1.2.so.0.0.0
+b2e7d000-b2e7e000 rw-p 00002000 07:01 17861      /usr/lib/libmythes-1.2.so.0.0.0
+b2e7e000-b2e7f000 rw-p 00000000 00:00 0 
+b2e7f000-b2eba000 r-xp 00000000 07:01 17112      /usr/lib/i386-linux-gnu/libxslt.so.1.1.28
+b2eba000-b2ebb000 r--p 0003b000 07:01 17112      /usr/lib/i386-linux-gnu/libxslt.so.1.1.28
+b2ebb000-b2ebc000 rw-p 0003c000 07:01 17112      /usr/lib/i386-linux-gnu/libxslt.so.1.1.28
+b2ebc000-b300f000 r-xp 00000000 07:01 17110      /usr/lib/i386-linux-gnu/libxml2.so.2.9.1
+b300f000-b3010000 ---p 00153000 07:01 17110      /usr/lib/i386-linux-gnu/libxml2.so.2.9.1
+b3010000-b3014000 r--p 00153000 07:01 17110      /usr/lib/i386-linux-gnu/libxml2.so.2.9.1
+b3014000-b3015000 rw-p 00157000 07:01 17110      /usr/lib/i386-linux-gnu/libxml2.so.2.9.1
+b3015000-b3016000 rw-p 00000000 00:00 0 
+b3016000-b3035000 r-xp 00000000 07:01 17843      /usr/lib/liblangtag.so.1.2.0
+b3035000-b3036000 r--p 0001e000 07:01 17843      /usr/lib/liblangtag.so.1.2.0
+b3036000-b3037000 rw-p 0001f000 07:01 17843      /usr/lib/liblangtag.so.1.2.0
+b3037000-b3087000 r-xp 00000000 07:01 16729      /usr/lib/i386-linux-gnu/liblcms2.so.2.0.5
+b3087000-b3088000 r--p 0004f000 07:01 16729      /usr/lib/i386-linux-gnu/liblcms2.so.2.0.5
+b3088000-b308c000 rw-p 00050000 07:01 16729      /usr/lib/i386-linux-gnu/liblcms2.so.2.0.5
+b308c000-b30d4000 r-xp 00000000 07:01 16713      /usr/lib/i386-linux-gnu/libjpeg.so.8.0.2
+b30d4000-b30d5000 r--p 00048000 07:01 16713      /usr/lib/i386-linux-gnu/libjpeg.so.8.0.2
+b30d5000-b30d6000 rw-p 00049000 07:01 16713      /usr/lib/i386-linux-gnu/libjpeg.so.8.0.2
+b30d6000-b30e7000 rw-p 00000000 00:00 0 
+b30e7000-b323d000 r-xp 00000000 07:01 16686      /usr/lib/i386-linux-gnu/libicuuc.so.48.1.1
+b323d000-b3247000 r--p 00155000 07:01 16686      /usr/lib/i386-linux-gnu/libicuuc.so.48.1.1
+b3247000-b3248000 rw-p 0015f000 07:01 16686      /usr/lib/i386-linux-gnu/libicuuc.so.48.1.1
+b3248000-b324c000 rw-p 00000000 00:00 0 
+b324c000-b327f000 r-xp 00000000 07:01 16678      /usr/lib/i386-linux-gnu/libicule.so.48.1.1
+b327f000-b3280000 r--p 00033000 07:01 16678      /usr/lib/i386-linux-gnu/libicule.so.48.1.1
+b3280000-b3281000 rw-p 00034000 07:01 16678      /usr/lib/i386-linux-gnu/libicule.so.48.1.1
+b3281000-b344f000 r-xp 00000000 07:01 16674      /usr/lib/i386-linux-gnu/libicui18n.so.48.1.1
+b344f000-b3450000 ---p 001ce000 07:01 16674      /usr/lib/i386-linux-gnu/libicui18n.so.48.1.1
+b3450000-b3456000 r--p 001ce000 07:01 16674      /usr/lib/i386-linux-gnu/libicui18n.so.48.1.1
+b3456000-b3457000 rw-p 001d4000 07:01 16674      /usr/lib/i386-linux-gnu/libicui18n.so.48.1.1
+b3457000-b34a8000 r-xp 00000000 07:01 16664      /usr/lib/i386-linux-gnu/libhunspell-1.3.so.0.0.0
+b34a8000-b34a9000 r--p 00050000 07:01 16664      /usr/lib/i386-linux-gnu/libhunspell-1.3.so.0.0.0
+b34a9000-b34ad000 rw-p 00051000 07:01 16664      /usr/lib/i386-linux-gnu/libhunspell-1.3.so.0.0.0
+b34ad000-b34fe000 r-xp 00000000 07:01 16656      /usr/lib/i386-linux-gnu/libharfbuzz.so.0.919.0
+b34fe000-b34ff000 r--p 00051000 07:01 16656      /usr/lib/i386-linux-gnu/libharfbuzz.so.0.919.0
+b34ff000-b3500000 rw-p 00052000 07:01 16656      /usr/lib/i386-linux-gnu/libharfbuzz.so.0.919.0
+b3500000-b3501000 rw-p 00000000 00:00 0 
+b3501000-b3503000 r-xp 00000000 07:01 16654      /usr/lib/i386-linux-gnu/libharfbuzz-icu.so.0.919.0
+b3503000-b3504000 r--p 00001000 07:01 16654      /usr/lib/i386-linux-gnu/libharfbuzz-icu.so.0.919.0
+b3504000-b3505000 rw-p 00002000 07:01 16654      /usr/lib/i386-linux-gnu/libharfbuzz-icu.so.0.919.0
+b3505000-b3526000 r-xp 00000000 07:01 16394      /usr/lib/i386-linux-gnu/libgdk_pixbuf-2.0.so.0.2800.1
+b3526000-b3527000 r--p 00020000 07:01 16394      /usr/lib/i386-linux-gnu/libgdk_pixbuf-2.0.so.0.2800.1
+b3527000-b3528000 rw-p 00021000 07:01 16394      /usr/lib/i386-linux-gnu/libgdk_pixbuf-2.0.so.0.2800.1
+b3528000-b352b000 r-xp 00000000 07:01 16429      /usr/lib/i386-linux-gnu/libgmodule-2.0.so.0.3800.0
+b352b000-b352c000 r--p 00002000 07:01 16429      /usr/lib/i386-linux-gnu/libgmodule-2.0.so.0.3800.0
+b352c000-b352d000 rw-p 00003000 07:01 16429      /usr/lib/i386-linux-gnu/libgmodule-2.0.so.0.3800.0
+b352d000-b353d000 r-xp 00000000 07:01 16396      /usr/lib/i386-linux-gnu/libgdk_pixbuf_xlib-2.0.so.0.2800.1
+b353d000-b353e000 r--p 0000f000 07:01 16396      /usr/lib/i386-linux-gnu/libgdk_pixbuf_xlib-2.0.so.0.2800.1
+b353e000-b353f000 rw-p 00010000 07:01 16396      /usr/lib/i386-linux-gnu/libgdk_pixbuf_xlib-2.0.so.0.2800.1
+b353f000-b3577000 r-xp 00000000 07:01 16345      /usr/lib/i386-linux-gnu/libfontconfig.so.1.7.0
+b3577000-b3578000 r--p 00038000 07:01 16345      /usr/lib/i386-linux-gnu/libfontconfig.so.1.7.0
+b3578000-b3579000 rw-p 00039000 07:01 16345      /usr/lib/i386-linux-gnu/libfontconfig.so.1.7.0
+b3579000-b357a000 rw-p 00000000 00:00 0 
+b357a000-b3614000 r-xp 00000000 07:01 16357      /usr/lib/i386-linux-gnu/libfreetype.so.6.10.1
+b3614000-b3618000 r--p 00099000 07:01 16357      /usr/lib/i386-linux-gnu/libfreetype.so.6.10.1
+b3618000-b3619000 rw-p 0009d000 07:01 16357      /usr/lib/i386-linux-gnu/libfreetype.so.6.10.1
+b3619000-b3663000 r-xp 00000000 07:01 16824      /usr/lib/i386-linux-gnu/libpango-1.0.so.0.3200.5
+b3663000-b3664000 ---p 0004a000 07:01 16824      /usr/lib/i386-linux-gnu/libpango-1.0.so.0.3200.5
+b3664000-b3665000 r--p 0004a000 07:01 16824      /usr/lib/i386-linux-gnu/libpango-1.0.so.0.3200.5
+b3665000-b3666000 rw-p 0004b000 07:01 16824      /usr/lib/i386-linux-gnu/libpango-1.0.so.0.3200.5
+b3666000-b3783000 r-xp 00000000 07:01 16200      /usr/lib/i386-linux-gnu/libcairo.so.2.11200.16
+b3783000-b3785000 r--p 0011d000 07:01 16200      /usr/lib/i386-linux-gnu/libcairo.so.2.11200.16
+b3785000-b3786000 rw-p 0011f000 07:01 16200      /usr/lib/i386-linux-gnu/libcairo.so.2.11200.16
+b3786000-b3787000 rw-p 00000000 00:00 0 
+b3787000-b3792000 r-xp 00000000 07:01 16826      /usr/lib/i386-linux-gnu/libpangocairo-1.0.so.0.3200.5
+b3792000-b3793000 r--p 0000a000 07:01 16826      /usr/lib/i386-linux-gnu/libpangocairo-1.0.so.0.3200.5
+b3793000-b3794000 rw-p 0000b000 07:01 16826      /usr/lib/i386-linux-gnu/libpangocairo-1.0.so.0.3200.5
+b3794000-b37a7000 r-xp 00000000 07:01 16828      /usr/lib/i386-linux-gnu/libpangoft2-1.0.so.0.3200.5
+b37a7000-b37a8000 r--p 00013000 07:01 16828      /usr/lib/i386-linux-gnu/libpangoft2-1.0.so.0.3200.5
+b37a8000-b37a9000 rw-p 00014000 07:01 16828      /usr/lib/i386-linux-gnu/libpangoft2-1.0.so.0.3200.5
+b37a9000-b37aa000 rw-p 00000000 00:00 0 
+b37aa000-b37c8000 r-xp 00000000 07:01 16160      /usr/lib/i386-linux-gnu/libatk-1.0.so.0.21009.1
+b37c8000-b37ca000 r--p 0001d000 07:01 16160      /usr/lib/i386-linux-gnu/libatk-1.0.so.0.21009.1
+b37ca000-b37cb000 rw-p 0001f000 07:01 16160      /usr/lib/i386-linux-gnu/libatk-1.0.so.0.21009.1
+b37cb000-b3876000 r-xp 00000000 07:01 16392      /usr/lib/i386-linux-gnu/libgdk-x11-2.0.so.0.2400.20
+b3876000-b3878000 r--p 000ab000 07:01 16392      /usr/lib/i386-linux-gnu/libgdk-x11-2.0.so.0.2400.20
+b3878000-b3879000 rw-p 000ad000 07:01 16392      /usr/lib/i386-linux-gnu/libgdk-x11-2.0.so.0.2400.20
+b3879000-b3ce0000 r-xp 00000000 07:01 16635      /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0.2400.20
+b3ce0000-b3ce4000 r--p 00466000 07:01 16635      /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0.2400.20
+b3ce4000-b3ce6000 rw-p 0046a000 07:01 16635      /usr/lib/i386-linux-gnu/libgtk-x11-2.0.so.0.2400.20
+b3ce6000-b3ce8000 rw-p 00000000 00:00 0 
+b3ce8000-b3d00000 r-xp 00000000 07:01 16540      /usr/lib/i386-linux-gnu/libgraphite2.so.3.0.1
+b3d00000-b3d01000 ---p 00018000 07:01 16540      /usr/lib/i386-linux-gnu/libgraphite2.so.3.0.1
+b3d01000-b3d02000 r--p 00018000 07:01 16540      /usr/lib/i386-linux-gnu/libgraphite2.so.3.0.1
+b3d02000-b3d03000 rw-p 00019000 07:01 16540      /usr/lib/i386-linux-gnu/libgraphite2.so.3.0.1
+b3d03000-b3e6f000 r-xp 00000000 07:01 16417      /usr/lib/i386-linux-gnu/libgio-2.0.so.0.3800.0
+b3e6f000-b3e70000 ---p 0016c000 07:01 16417      /usr/lib/i386-linux-gnu/libgio-2.0.so.0.3800.0
+b3e70000-b3e72000 r--p 0016c000 07:01 16417      /usr/lib/i386-linux-gnu/libgio-2.0.so.0.3800.0
+b3e72000-b3e73000 rw-p 0016e000 07:01 16417      /usr/lib/i386-linux-gnu/libgio-2.0.so.0.3800.0
+b3e73000-b3e75000 rw-p 00000000 00:00 0 
+b3e75000-b3ea1000 r-xp 00000000 07:01 16376      /usr/lib/i386-linux-gnu/libgconf-2.so.4.1.5
+b3ea1000-b3ea2000 r--p 0002b000 07:01 16376      /usr/lib/i386-linux-gnu/libgconf-2.so.4.1.5
+b3ea2000-b3ea3000 rw-p 0002c000 07:01 16376      /usr/lib/i386-linux-gnu/libgconf-2.so.4.1.5
+b3ea3000-b3ec8000 r-xp 00000000 07:01 3687       /lib/i386-linux-gnu/libexpat.so.1.6.0
+b3ec8000-b3ec9000 ---p 00025000 07:01 3687       /lib/i386-linux-gnu/libexpat.so.1.6.0
+b3ec9000-b3ecb000 r--p 00025000 07:01 3687       /lib/i386-linux-gnu/libexpat.so.1.6.0
+b3ecb000-b3ecc000 rw-p 00027000 07:01 3687       /lib/i386-linux-gnu/libexpat.so.1.6.0
+b3ecc000-b3fce000 r-xp 00000000 07:01 3696       /lib/i386-linux-gnu/libglib-2.0.so.0.3800.0
+b3fce000-b3fcf000 r--p 00101000 07:01 3696       /lib/i386-linux-gnu/libglib-2.0.so.0.3800.0
+b3fcf000-b3fd0000 rw-p 00102000 07:01 3696       /lib/i386-linux-gnu/libglib-2.0.so.0.3800.0
+b3fd0000-b4020000 r-xp 00000000 07:01 16447      /usr/lib/i386-linux-gnu/libgobject-2.0.so.0.3800.0
+b4020000-b4021000 r--p 0004f000 07:01 16447      /usr/lib/i386-linux-gnu/libgobject-2.0.so.0.3800.0
+b4021000-b4022000 rw-p 00050000 07:01 16447      /usr/lib/i386-linux-gnu/libgobject-2.0.so.0.3800.0
+b4022000-b406b000 r-xp 00000000 07:01 3679       /lib/i386-linux-gnu/libdbus-1.so.3.7.4
+b406b000-b406c000 r--p 00048000 07:01 3679       /lib/i386-linux-gnu/libdbus-1.so.3.7.4
+b406c000-b406d000 rw-p 00049000 07:01 3679       /lib/i386-linux-gnu/libdbus-1.so.3.7.4
+b406d000-b406e000 rw-p 00000000 00:00 0 
+b406e000-b4092000 r-xp 00000000 07:01 16277      /usr/lib/i386-linux-gnu/libdbus-glib-1.so.2.2.2
+b4092000-b4093000 r--p 00023000 07:01 16277      /usr/lib/i386-linux-gnu/libdbus-glib-1.so.2.2.2
+b4093000-b4094000 rw-p 00024000 07:01 16277      /usr/lib/i386-linux-gnu/libdbus-glib-1.so.2.2.2
+b4094000-b40f2000 r-xp 00000000 07:01 16269      /usr/lib/i386-linux-gnu/libcurl-gnutls.so.4.3.0
+b40f2000-b40f4000 r--p 0005d000 07:01 16269      /usr/lib/i386-linux-gnu/libcurl-gnutls.so.4.3.0
+b40f4000-b40f5000 rw-p 0005f000 07:01 16269      /usr/lib/i386-linux-gnu/libcurl-gnutls.so.4.3.0
+b40f5000-b415c000 r-xp 00000000 07:01 16260      /usr/lib/i386-linux-gnu/libcups.so.2
+b415c000-b4160000 r--p 00067000 07:01 16260      /usr/lib/i386-linux-gnu/libcups.so.2
+b4160000-b4161000 rw-p 0006b000 07:01 16260      /usr/lib/i386-linux-gnu/libcups.so.2
+b4161000-b419b000 r-xp 00000000 07:01 16228      /usr/lib/i386-linux-gnu/libclucene-contribs-lib.so.2.3.3.4
+b419b000-b419c000 r--p 00039000 07:01 16228      /usr/lib/i386-linux-gnu/libclucene-contribs-lib.so.2.3.3.4
+b419c000-b41ad000 rw-p 0003a000 07:01 16228      /usr/lib/i386-linux-gnu/libclucene-contribs-lib.so.2.3.3.4
+b41ad000-b41c5000 r-xp 00000000 07:01 16232      /usr/lib/i386-linux-gnu/libclucene-shared.so.2.3.3.4
+b41c5000-b41c6000 r--p 00017000 07:01 16232      /usr/lib/i386-linux-gnu/libclucene-shared.so.2.3.3.4
+b41c6000-b41c7000 rw-p 00018000 07:01 16232      /usr/lib/i386-linux-gnu/libclucene-shared.so.2.3.3.4
+b41c7000-b41c8000 rw-p 00000000 00:00 0 
+b41c8000-b4335000 r-xp 00000000 07:01 16230      /usr/lib/i386-linux-gnu/libclucene-core.so.2.3.3.4
+b4335000-b433d000 r--p 0016d000 07:01 16230      /usr/lib/i386-linux-gnu/libclucene-core.so.2.3.3.4
+b433d000-b433e000 rw-p 00175000 07:01 16230      /usr/lib/i386-linux-gnu/libclucene-core.so.2.3.3.4
+b433e000-b433f000 rw-p 00000000 00:00 0 
+b433f000-b434d000 r-xp 00000000 07:01 16183      /usr/lib/i386-linux-gnu/libboost_date_time.so.1.53.0
+b434d000-b434e000 r--p 0000d000 07:01 16183      /usr/lib/i386-linux-gnu/libboost_date_time.so.1.53.0
+b434e000-b434f000 rw-p 0000e000 07:01 16183      /usr/lib/i386-linux-gnu/libboost_date_time.so.1.53.0
+b434f000-b43d4000 r-xp 00000000 07:01 20765      /usr/lib/lp_solve/liblpsolve55.so
+b43d4000-b43d5000 ---p 00085000 07:01 20765      /usr/lib/lp_solve/liblpsolve55.so
+b43d5000-b43d6000 r--p 00085000 07:01 20765      /usr/lib/lp_solve/liblpsolve55.so
+b43d6000-b43d7000 rw-p 00086000 07:01 20765      /usr/lib/lp_solve/liblpsolve55.so
+b43d7000-b4585000 r-xp 00000000 07:01 3667       /lib/i386-linux-gnu/libc-2.17.so
+b4585000-b4587000 r--p 001ae000 07:01 3667       /lib/i386-linux-gnu/libc-2.17.so
+b4587000-b4588000 rw-p 001b0000 07:01 3667       /lib/i386-linux-gnu/libc-2.17.so
+b4588000-b458b000 rw-p 00000000 00:00 0 
+b458b000-b458c000 r--s 00000000 07:01 159453     /var/cache/fontconfig/62f91419b9ebdb6975e7e41ab6412357-le32d4.cache-4
+b458c000-b459c000 rw-p 00000000 00:00 0 
+b459c000-b459d000 r--p 00855000 07:01 20763      /usr/lib/locale/locale-archive
+b459d000-b45eb000 r-xp 00000000 07:01 28175      /usr/lib/ure/lib/libuno_sal.so.3
+b45eb000-b45ed000 r--p 0004d000 07:01 28175      /usr/lib/ure/lib/libuno_sal.so.3
+b45ed000-b45ee000 rw-p 0004f000 07:01 28175      /usr/lib/ure/lib/libuno_sal.so.3
+b45ee000-b45f1000 rw-p 00000000 00:00 0 
+b45f1000-b75b8000 r-xp 00000000 07:01 18049      /usr/lib/libreoffice/program/libmergedlo.so
+b75b8000-b76f7000 r--p 02fc7000 07:01 18049      /usr/lib/libreoffice/program/libmergedlo.so
+b76f7000-b773a000 rw-p 03106000 07:01 18049      /usr/lib/libreoffice/program/libmergedlo.so
+b773a000-b774d000 rw-p 00000000 00:00 0 
+b774d000-b774e000 r-xp 00000000 00:00 0          [vdso]
+b774e000-b776e000 r-xp 00000000 07:01 3643       /lib/i386-linux-gnu/ld-2.17.so
+b776e000-b776f000 r--p 0001f000 07:01 3643       /lib/i386-linux-gnu/ld-2.17.so
+b776f000-b7770000 rw-p 00020000 07:01 3643       /lib/i386-linux-gnu/ld-2.17.so
+bfaf7000-bfb43000 rw-p 00000000 00:00 0          [stack]
+
+VM Arguments:
+jvm_args: abort -Dorg.openoffice.native= -Duser.language=en -Duser.country=US 
+java_command: <unknown>
+Launcher Type: generic
+
+Environment Variables:
+JAVA_HOME=/usr/lib/jvm/java-7-openjdk-i386/jre
+PATH=/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games
+USERNAME=ubuntu-gnome
+LD_LIBRARY_PATH=/usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/client:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/server:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386/native_threads:/usr/lib/jvm/java-7-openjdk-i386/jre/lib/i386
+SHELL=/bin/bash
+DISPLAY=:0
+
+Signal Handlers:
+SIGSEGV: [libjvm.so+0x4a4ad0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGBUS: [libjvm.so+0x4a4ad0], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGFPE: [libjvm.so+0x3a0a00], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGPIPE: [libjvm.so+0x3a0a00], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGXFSZ: [libjvm.so+0x3a0a00], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGILL: [libjvm.so+0x3a0a00], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGUSR1: SIG_DFL, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGUSR2: [libjvm.so+0x3a0750], sa_mask[0]=0x00000000, sa_flags=0x10000004
+SIGHUP: SIG_IGN, sa_mask[0]=0x00000000, sa_flags=0x00000000
+SIGINT: [libjvm.so+0x3a0a40], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGTERM: [libjvm.so+0x3a0a40], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+SIGQUIT: [libjvm.so+0x3a0a40], sa_mask[0]=0x7ffbfeff, sa_flags=0x10000004
+
+
+---------------  S Y S T E M  ---------------
+
+OS:Ubuntu 13.10 (saucy)
+uname:Linux 3.11.0-12-generic #19-Ubuntu SMP Wed Oct 9 16:12:00 UTC 2013 i686
+libc:glibc 2.17 NPTL 2.17 
+rlimit: STACK 8192k, CORE 0k, NPROC 15901, NOFILE 4096, AS infinity
+load average:5.81 3.07 1.35
+
+/proc/meminfo:
+MemTotal:        2054856 kB
+MemFree:          152836 kB
+Buffers:           37928 kB
+Cached:          1166796 kB
+SwapCached:            0 kB
+Active:          1102492 kB
+Inactive:         730680 kB
+Active(anon):    1036152 kB
+Inactive(anon):   659740 kB
+Active(file):      66340 kB
+Inactive(file):    70940 kB
+Unevictable:           0 kB
+Mlocked:               0 kB
+HighTotal:       1173872 kB
+HighFree:          36420 kB
+LowTotal:         880984 kB
+LowFree:          116416 kB
+SwapTotal:             0 kB
+SwapFree:              0 kB
+Dirty:               124 kB
+Writeback:             0 kB
+AnonPages:        628936 kB
+Mapped:            60524 kB
+Shmem:           1067048 kB
+Slab:              36720 kB
+SReclaimable:      18944 kB
+SUnreclaim:        17776 kB
+KernelStack:        2952 kB
+PageTables:         8604 kB
+NFS_Unstable:          0 kB
+Bounce:                0 kB
+WritebackTmp:          0 kB
+CommitLimit:     1027428 kB
+Committed_AS:    3924304 kB
+VmallocTotal:     122880 kB
+VmallocUsed:       16460 kB
+VmallocChunk:     106092 kB
+HardwareCorrupted:     0 kB
+AnonHugePages:         0 kB
+HugePages_Total:       0
+HugePages_Free:        0
+HugePages_Rsvd:        0
+HugePages_Surp:        0
+Hugepagesize:       2048 kB
+DirectMap4k:       12280 kB
+DirectMap2M:      901120 kB
+
+
+CPU:total 2 (2 cores per cpu, 1 threads per core) family 6 model 15 stepping 13, cmov, cx8, fxsr, mmx, sse, sse2, sse3, ssse3, tsc
+
+/proc/cpuinfo:
+processor	: 0
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 15
+model name	: Intel(R) Pentium(R) Dual  CPU  T2370  @ 1.73GHz
+stepping	: 13
+microcode	: 0xa3
+cpu MHz		: 1733.000
+cache size	: 1024 KB
+physical id	: 0
+siblings	: 2
+core id		: 0
+cpu cores	: 2
+apicid		: 0
+initial apicid	: 0
+fdiv_bug	: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 10
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc arch_perfmon pebs bts aperfmperf pni dtes64 monitor ds_cpl est tm2 ssse3 cx16 xtpr pdcm lahf_lm dtherm
+bogomips	: 3458.65
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+processor	: 1
+vendor_id	: GenuineIntel
+cpu family	: 6
+model		: 15
+model name	: Intel(R) Pentium(R) Dual  CPU  T2370  @ 1.73GHz
+stepping	: 13
+microcode	: 0xa3
+cpu MHz		: 1733.000
+cache size	: 1024 KB
+physical id	: 0
+siblings	: 2
+core id		: 1
+cpu cores	: 2
+apicid		: 1
+initial apicid	: 1
+fdiv_bug	: no
+f00f_bug	: no
+coma_bug	: no
+fpu		: yes
+fpu_exception	: yes
+cpuid level	: 10
+wp		: yes
+flags		: fpu vme de pse tsc msr pae mce cx8 apic sep mtrr pge mca cmov pat pse36 clflush dts acpi mmx fxsr sse sse2 ss ht tm pbe nx lm constant_tsc arch_perfmon pebs bts aperfmperf pni dtes64 monitor ds_cpl est tm2 ssse3 cx16 xtpr pdcm lahf_lm dtherm
+bogomips	: 3458.65
+clflush size	: 64
+cache_alignment	: 64
+address sizes	: 36 bits physical, 48 bits virtual
+power management:
+
+
+
+Memory: 4k page, physical 2054856k(152836k free), swap 0k(0k free)
+
+vm_info: OpenJDK Client VM (23.7-b01) for linux-x86 JRE (1.7.0_25-b30), built on Oct 11 2013 18:15:15 by "buildd" with gcc 4.8.1
+
+time: Sat Apr 12 22:52:47 2014
+elapsed time: 6838 seconds
+
