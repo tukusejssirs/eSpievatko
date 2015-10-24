@@ -1,5 +1,5 @@
 #eSpievatko TODO
-**alebo co vsetko je v plane**
+*alebo co vsetko je v plane*
 
 ##vsetko (noty, akordy, texty)
 
